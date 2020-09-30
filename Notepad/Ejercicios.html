@@ -1,0 +1,335 @@
+<html>
+	<head>
+		<script>
+			// Ejercicio 7 /////////////////////////////////////////////////////
+			
+			function positivonoelse(numero){
+				if (numero >=0){
+					console.log("El número leído es positivo");
+				}
+				if (numero <0){
+					console.log("El número leído es negativo");
+				}
+			}
+			
+			function positivoconelse(numero){
+				if (numero >=0){
+					console.log("El número leído es positivo");
+				}
+				else {
+					console.log("El número leído es negativo");
+				}
+			}
+			
+			/*testeo
+			positivonoelse(1);
+			positivonoelse(-1);
+			positivonoelse(0);
+			positivoconelse(1);
+			positivoconelse(-1);
+			positivoconelse(0);
+			*/
+			
+			// Ejercicio 8 /////////////////////////////////////////////////////
+			
+			function mayoromenor(num1, num2){
+				if (num1 > num2){
+					console.log("El primer número es mayor que el segundo");
+					
+				}
+				else if (num2 > num1){
+					console.log("El primer número es menor que el segundo");
+				}
+				else {
+					console.log("Los números son iguales");
+				}
+			}
+			
+			/*testeo
+			mayoromenor(1,2);
+			mayoromenor(2,1);
+			mayoromenor(2,2);
+			*/
+			
+			// Ejercicio 9 ////////////////////////////////////////////////////
+			
+			function espar(numero){
+				if (numero % 2 == 0){
+					console.log("El número es par");
+				}
+				else {
+					console.log("El número es impar");
+				}
+			}
+			
+			/*testeo
+			espar(1);
+			espar(2);
+			*/
+			
+			// Ejercicio 10 ////////////////////////////////////////////////////
+			
+			function dospositivos(num1, num2){
+				if (num1 > 0 && num2 > 0){
+					return num1 + num2;
+				}
+				else {
+					return -1;
+				}
+			}
+			
+			/*testeo
+			var numero1 = prompt("Introduce el primer número");
+			numero1 = parseFloat(numero1);
+			var numero2 = prompt("Introduce el segundo número");
+			numero2 = parseFloat(numero2);
+			console.log("Números introducidos: "+ numero1 + ", " + numero2) 
+			
+			
+			var resultado = dospositivos(numero1, numero2);
+			if (resultado == -1){
+				console.log("Alguno de los números o los dos no es positivo");
+			}
+			else {
+				console.log("La suma de los dos números es: " + resultado);
+			}
+			*/
+			
+			// Ejercicio 11 ////////////////////////////////////////////////////
+			
+			function esbisiesto(fecha){
+				var bisiesto = false
+				if ((fecha % 4 == 0 && fecha % 100 != 0) || fecha % 400 == 0){
+					bisiesto = true;
+				}
+				return bisiesto;
+			}
+			
+			/*
+			var year = prompt("Qué año es?");
+			resultado = esbisiesto(year);
+			
+			if (resultado == true){
+				console.log("El año " + year + " es bisiesto");
+			}
+			else {
+				console.log("El año " + year + " no es bisiesto");
+			}
+			*/
+			
+			// Ejercicio 1 /////////////////////////////////////////////////////
+			
+			function cuadrados(num){
+				console.log(Math.pow(num, 2));
+			}
+			
+			/*testeo
+			cuadrados(1);
+			cuadrados(2);
+			cuadrados(100);
+			cuadrados(-1);
+			*/
+			
+			// Ejercicio 2 /////////////////////////////////////////////////////
+			
+			function cubos(num){
+				return Math.pow(num, 3);
+			}
+			
+			/*testeo
+			console.log(cubos(1));
+			console.log(cubos(2));
+			console.log(cubos(-3));
+			*/
+			
+			// Ejercicio 3 /////////////////////////////////////////////////////
+			
+			function kmametros(km){
+				const RAZON = 1000;
+				return km * RAZON;
+			}
+			
+			/*testeo
+			var kilometros = prompt("Introduce km");
+			kilometros = parseFloat(kilometros);
+			resultado = kmametros(kilometros);
+			console.log(kilometros + " km son " + resultado + " metros");
+			*/
+			
+			//Ejercicio 4 /////////////////////////////////////////////////////
+			
+			function millasametros(m){
+				const RAZON = 1852;
+				return m * RAZON;
+			}
+			
+			/*testeo
+			var millas = prompt("Introduce millas");
+			millas = parseFloat(millas);
+			resultado = millasametros(millas);
+			console.log(millas + " millas son " + resultado + " metros");
+			*/
+			
+			// Ejercicio 5 /////////////////////////////////////////////////////
+			
+			function eptas(e){
+				const RAZON = 166.386;
+				return e * RAZON;
+			}
+			
+			/*testeo
+			var euros = prompt("Introduce euros");
+			euros = parseFloat(euros);
+			resultado = eptas(euros);
+			console.log(euros + " euros son " + resultado + " pesetas");
+			*/
+			
+			// Ejercicio 6 /////////////////////////////////////////////////////
+			
+			function calculadora(num1, num2){
+				var suma = num1 + num2;
+				var resta = num1 - num2;
+				var multi = num1 * num2;
+				var divis = num1 / num2;
+				console.log("La suma de los números es " + suma);
+				console.log("La resta de los números es " + resta);
+				console.log("La multiplicación de los números es " + multi);
+				console.log("La división de los números es " + divis);
+			}
+			
+			/*testeo
+			calculadora(4, 3);
+			*/
+			
+			// Ejercicio 7 /////////////////////////////////////////////////////
+			
+			function parimpar(num){
+				if (num < 0){
+					console.log("El número es negativo");
+				}
+				else {
+					console.log("El número es positivo");
+				}
+			}
+			
+			/*testeo
+			parimpar(1);
+			parimpar(-1);
+			*/
+				
+			// Ejercicio 8 /////////////////////////////////////////////////////
+			
+			function escribenumeros(numero){
+				if (numero == 0){
+					console.log("Cero");
+				}
+				else if (numero == 1){
+					console.log("Uno");
+				}
+				else if (numero == 2){
+					console.log("Dos");
+				}
+				else if (numero == 3){
+					console.log("Tres");
+				}
+				else if (numero == 4){
+					console.log("Cuatro");
+				}
+				else if (numero == 5){
+					console.log("Cinco");
+				}
+				else if (numero == 6){
+					console.log("Seis");
+				}
+				else if (numero == 7){
+					console.log("Siete");
+				}
+				else if (numero == 8){
+					console.log("Ocho");
+				}
+				else if (numero == 9){
+					console.log("Nueve");
+				}
+				else if (numero == 10){
+					console.log("Diez");
+				}
+			}
+			
+			/*testeo
+			escribenumeros(0);
+			escribenumeros(1);
+			escribenumeros(2);
+			escribenumeros(3);
+			escribenumeros(4);
+			escribenumeros(5);
+			escribenumeros(6);
+			escribenumeros(7);
+			escribenumeros(8);
+			escribenumeros(9);
+			escribenumeros(10);
+			*/
+				
+			// Ejercicio 9 /////////////////////////////////////////////////////
+			
+			function arearect(base, altura){
+				return base * altura;
+			}
+			
+			// Ejercicio 10 ////////////////////////////////////////////////////
+			
+			function grados(temperatura){
+				var unidad = prompt("Kelvin o Farenheit?"); 
+				const KELVIN = 273.15;
+				if (unidad == "Kelvin"){
+					console.log(temperatura + KELVIN);
+				}
+				else if (unidad == "Farenheit"){
+					console.log(temperatura * 9 / 5 +32);
+				}
+				else {
+					console.log("Debes introducir 'Farenheit' o 'Celsius'");
+				}
+			}
+			
+			/*testeo
+			grados(1);
+			grados(1);
+			*/
+					
+			// Ejercicio 11 ////////////////////////////////////////////////////
+			
+			function horas(segundos){
+				sec = segundos % 60;
+				var division = (segundos - (segundos % 60)) / 60;
+				min = division % 60;
+				horas = (division - (division % 60)) / 60;
+				var tiempo = horas + " h " + min + " min " + sec + " seg";
+				return tiempo;
+			}
+				
+			/*testeo
+			var segun = prompt("Introduce segundos");
+			console.log(horas(segun));
+			*/
+			
+			// Ejercicio 12 ////////////////////////////////////////////////////
+		
+			function salario(horas, bruto){
+				paga = 0;
+				if (horas > 40){
+					paga = (horas * 1.5 - 20) * bruto;
+				}
+				else {
+					paga = horas * bruto;
+				}
+				return paga;
+			}
+			
+			/*testeo
+			var nomina = salario(41, 10);
+			console.log(nomina);
+			*/
+			
+		</script>
+	</head>
+</html>

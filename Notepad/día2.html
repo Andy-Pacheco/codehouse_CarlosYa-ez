@@ -1,0 +1,214 @@
+<html>
+	<head>
+		<script>
+		/*
+			var edad = prompt("Introduce una edad");
+			edad = parseInt(edad);
+			
+			var puedeBeber = false;
+			if (edad >= 18){
+				puedeBeber = true;
+			}
+			else {
+				puedeBeber = false;
+			}
+			
+			if (puedeBeber == true){
+				console.log("Sí, puede beber");
+			}
+			else {
+				console.log("No, no puede beber");
+			}
+			
+			var altura = prompt("Introduce una altura");
+			altura = parseFloat(altura);
+			
+			var edad = prompt("Introduce la edad");
+			edad = parseInt(edad);
+			
+			if (altura >= 1.75 || edad >= 18){
+				console.log("Puedes pasar");
+			}
+			else {
+				console.log("No puedes pasar");
+			}
+		
+		
+			var peso = prompt("Introduce peso");
+			peso = parseInt(peso);
+			
+			var edad = prompt("Introduce la edad");
+			edad = parseInt(edad);
+			
+			if (peso < 80 && edad < 25 && edad >= 15){
+				console.log("Puedes saltar");
+			}
+			else {
+				console.log("No puedes saltar");
+			}
+		
+			
+			var edad = prompt("Introduce la edad");
+			edad = parseInt(edad);
+			
+			if (edad >= 18 && edad <= 30){
+				console.log("Te concedemos un crédito");
+			}
+			else if (edad >= 35 && edad <= 60){
+				console.log("Te concedemos un crédito");
+			}
+			else {
+				console.log("No te podemos conceder el crédito")
+			}
+		
+
+			var diadelaSemana = prompt("¿Qué día es hoy?");
+			
+			if (diadelaSemana == "viernes" || diadelaSemana == "sabado" || 
+			diadelaSemana == "domingo"){
+				console.log("Que bien que es " + diadelaSemana);
+			}
+			else if (diadelaSemana == "viernes" || diadelaSemana == "sabado" ||
+			diadelaSemana == "domingo"){
+				console.log("Aun es " + diadelaSemana);
+			}
+			else {
+				console.log("El día introducido no es correcto")
+			}
+		*/
+		/*
+			function esPar(numero){
+				if (numero % 2 == 0){
+					console.log("Es par");
+				}
+				else {
+					console.log("Es impar");
+				}
+			}
+			
+			esPar(8)
+			
+			function sumardos(num1, num2){
+				console.log(num1 + num2);
+			}
+
+			sumardos(1, 1);
+			sumardos(2, 7);
+			sumardos(3, 5);
+			
+			function multiplicados(n1, n2){
+				return n1 * n2;
+			}
+			
+			sumardos(1, 3);
+			var resultado = multiplicados(10, 5);
+			console.log(resultado);
+			
+			function potenciados(num){
+				return Math.pow(num, 2);
+			}
+			
+			var resultado = potenciados(-1);
+			console.log(resultado);
+			
+			function por8(num){
+				return num*8;
+			}
+			
+			var resultado = por8(2);
+			console.log(resultado);
+			
+			function concatenaDos(text1, text2){
+				console.log(text1 + " " + text2);
+			}
+			
+			concatenaDos("Hola", "Paco");
+			
+			function dollareuro(dollar){
+				return dollar*0.855858;
+			}
+			console.log(dollareuro(50));
+		*/
+			
+			function alturaDragonKham(altura){
+				var resultado = false;
+				const ALTURA_MIN = 1.75;
+				
+				if (altura >= ALTURA_MIN){
+					resultado = true;
+				}
+				else {
+					resultado = false;
+				}
+					return resultado;
+			}
+			
+			/*var alturaNinoCabezon = prompt("Introduce altura");
+			alturaNinoCabezon = parseFloat(alturaNinoCabezon);
+			res = alturaDragonKham(alturaNinoCabezon);
+			console.log(res);
+			*/
+			function pesoDragonKham(peso){
+				var resultado = false;
+				const PESO_MIN = 85;
+				
+				if (peso <= PESO_MIN){
+					resultado = true;
+				}
+				else {
+					resultado = false;
+				}
+				return resultado;
+			}
+
+			/*var pesoNinoCabezon = prompt("Introduce peso");
+			pesoNinoCabezon = parseFloat(pesoNinoCabezon);
+			res = pesoDragonKham(pesoNinoCabezon);
+			console.log(res);
+			*/
+			function edadDragonKham(edad){
+				var resultado = false;
+				const EDAD_MIN = 15;
+				
+				if (edad >= EDAD_MIN){
+					resultado = true;
+				}
+				else {
+					resultado = false;
+				}
+				
+				return resultado;
+			}
+			
+			/*var edadNinoCabezon = prompt("Introduce edad");
+			edadNinoCabezon = parseFloat(edadNinoCabezon);
+			res = edadDragonKham(edadNinoCabezon);
+			console.log(res);
+			*/
+			function accesoDragonKham(edad, peso, altura){
+				var resEdad = edadDragonKham(edad);
+				var resPeso = pesoDragonKham(peso);
+				var resAltura = alturaDragonKham(altura);
+				var resultado = false;
+				
+				if (resEdad && resPeso && resAltura){
+					resultado = true;
+				}
+				else {
+					resultado = false;
+				}
+				return resultado;
+			}
+			
+			var todobien = accesoDragonKham(15, 95, 1.8);
+			
+			if (todobien == true){
+				console.log("Pasa");
+			}
+			else {
+				console.log("No pasa");
+			}
+			
+		</script>
+	</head>
+</html>
