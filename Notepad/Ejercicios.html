@@ -70,12 +70,14 @@
 			// Ejercicio 10 ////////////////////////////////////////////////////
 			
 			function dospositivos(num1, num2){
+				var res = -1;
 				if (num1 > 0 && num2 > 0){
-					return num1 + num2;
+					res = num1 + num2;
 				}
 				else {
-					return -1;
+					res = -1;
 				}
+				return res;
 			}
 			
 			/*testeo
@@ -186,15 +188,27 @@
 			
 			// Ejercicio 6 /////////////////////////////////////////////////////
 			
-			function calculadora(num1, num2){
-				var suma = num1 + num2;
-				var resta = num1 - num2;
-				var multi = num1 * num2;
-				var divis = num1 / num2;
-				console.log("La suma de los números es " + suma);
-				console.log("La resta de los números es " + resta);
-				console.log("La multiplicación de los números es " + multi);
-				console.log("La división de los números es " + divis);
+			function suma(n1, n2){
+				return n1 + n2;
+			}
+			
+			function resta(n1, n2){
+				return n1 - n2;
+			}
+			
+			function multiplica(n1, n2){
+				return n1 * n2;
+			}
+			
+			function divide(n1, n2){
+				return n1 / n2;
+			}
+			
+			function calculadora(n1, n2){
+				console.log("La suma es " + suma(n1, n2));
+				console.log("La resta es " + resta(n1, n2));
+				console.log("La multiplicación es " + multiplica(n1, n2));
+				console.log("La división es " + divide(n1, n2));
 			}
 			
 			/*testeo
@@ -279,8 +293,8 @@
 			
 			function grados(temperatura){
 				var unidad = prompt("Kelvin o Farenheit?"); 
-				const KELVIN = 273.15;
 				if (unidad == "Kelvin"){
+					const KELVIN = 273.15;
 					console.log(temperatura + KELVIN);
 				}
 				else if (unidad == "Farenheit"){
@@ -293,23 +307,23 @@
 			
 			/*testeo
 			grados(1);
-			grados(1);
+			grados(-273.5);
 			*/
 					
 			// Ejercicio 11 ////////////////////////////////////////////////////
 			
-			function horas(segundos){
+			function time(segundos){
 				sec = segundos % 60;
-				var division = (segundos - (segundos % 60)) / 60;
-				min = division % 60;
-				horas = (division - (division % 60)) / 60;
-				var tiempo = horas + " h " + min + " min " + sec + " seg";
+				var minutos = (segundos - (segundos % 60)) / 60;
+				min = minutos % 60;
+				hour = (minutos - (minutos % 60)) / 60;
+				var tiempo = hour + " h " + min + " min " + sec + " seg";
 				return tiempo;
 			}
 				
 			/*testeo
-			var segun = prompt("Introduce segundos");
-			console.log(horas(segun));
+			var seg = prompt("Introduce segundos");
+			console.log(time(seg));
 			*/
 			
 			// Ejercicio 12 ////////////////////////////////////////////////////

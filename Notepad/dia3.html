@@ -1,0 +1,240 @@
+<html>
+	<head>
+		<script>
+		
+			// Ejemplo clase
+			function ordenado(text1, text2){
+				return text1 + " " + text2;
+			}
+			
+			function yoda(text1, text2){
+				return text2 + " " + text1;
+			}
+			
+			function dostextos(text1, text2){
+				console.log(ordenado(text1, text2));
+				console.log(yoda(text1, text2));
+			}
+			
+			//testeo
+			dostextos("yo podría", "ayudarte");
+			
+			//Ejemplo clase
+			
+			function cuadradoPrimero(n1, n2){
+				return Math.pow(n1, 2) * n2;
+			}
+			
+			function cuadradoSegundo(n1, n2){
+				return Math.pow(n2, 2) * n1;
+			}
+			function mostrarCuadrados(n1, n2){
+				console.log(cuadradoPrimero(n1, n2));
+				console.log(cuadradoSegundo(n1, n2))
+			}
+			
+			//testeo
+			mostrarCuadrados(3, 2);
+			
+			// Ejemplo clase
+		
+			function area(base, altura){
+				return base * altura;
+			}
+			
+			function perimetro(base, altura){
+				return base * 2 + altura * 2;
+			}
+			
+			function rectangulo(base, altura){
+				console.log(area(base, altura));
+				console.log(perimetro(base, altura));
+			}
+			
+			//testeo
+			rectangulo(2, 3);
+			
+			// Ejemplo clase
+			
+			function diadelasemana(letra){
+				if (letra == "l" || letra == "L"){
+					console.log("Lunes");
+				}
+				else if (letra == "m" || letra == "M"){
+					console.log("Martes")
+				}
+				else if (letra == "x" || letra == "X"){
+					console.log("Miércoles")
+				}
+				else if (letra == "j" || letra == "J"){
+					console.log("Jueves")
+				}
+				else if (letra == "v" || letra == "V"){
+					console.log("Viernes")
+				}
+				else if (letra == "s" || letra == "S"){
+					console.log("Sábado")
+				}
+				else if (letra == "d" || letra == "D"){
+					console.log("Domingo")
+				}
+				else {
+					console.log("No sé qué día es ese");
+				}
+			}
+				
+			//testeo
+			diadelasemana("L");
+			
+			// La switch
+			
+				function verDiaSemana2(dia){
+					var textoDia = "";
+					
+					switch(dia){
+						case "l":
+						case "L":
+							textoDia = "Lunes";
+							break;
+						case "m":
+						case "M":
+							textoDia = "Martes";
+							break
+						case "x":
+						case "X":
+							textoDia = "Miércoles";
+							break
+						case "j":
+						case "J":
+							textoDia = "Viernes";
+							break
+						case "v":
+						case "V":
+							textoDia = "Viernes";
+							break
+						case "s":
+						case "S":
+							textoDia = "Viernes";
+							break
+						case "d":
+						case "D":
+							textoDia = "Viernes";
+							break
+						default:
+							textoDia = "La letra introducida no es válida";
+					}
+					console.log("El día es " + textoDia);
+				}
+			
+			// Ejercicio
+			
+			function meses(numero){
+				var mes = "";
+				
+				switch (numero){
+					case 1:
+						mes = "enero";
+						break
+					case 2:
+						mes = "febrero";
+						break
+					case 3:
+						mes = "marzo";
+						break
+					case 4:
+						mes = "abril";
+						break
+					case 5:
+						mes = "mayo";
+						break
+					case 6:
+						mes = "junio";
+						break
+					case 7:
+						mes = "julio";
+						break
+					case 8:
+						mes = "agosto";
+						break
+					case 9:
+						mes = "septiembre";
+						break
+					case 10:
+						mes = "octubre";
+						break
+					case 11:
+						mes = "noviembre";
+						break
+					case 12:
+						mes = "diciembre";
+						break
+					default:
+						mes = "error";
+						break
+						
+				}
+				return mes;
+			}
+			
+			function fecha(dd, mm, aaaa){
+				console.log(dd + " de " + meses(mm) + " de " + aaaa);
+			}
+			
+			// testeo
+			meses(1);
+			meses(4);
+			meses(34534);
+			fecha(16,1,1991);
+			
+			
+			
+			
+			function morse(num){
+				var textMorse = "";
+
+				switch(num){
+					case 0:
+						textMorse = "-----";
+						break;
+					case 1:
+						textMorse = ".----";
+						break;
+					case 2:
+						textMorse = "..---";
+						break;
+					case 3:
+						textMorse = "...--";
+						break;
+					case 4:
+						textMorse = "....-";
+						break;
+					case 5:
+						textMorse = ".....";
+						break;
+					case 6:
+						textMorse = "-....";
+						break;
+					case 7:
+						textMorse = "--...";
+						break;
+					case 8:
+						textMorse = "---..";
+						break;
+					case 9:
+						textMorse = "----·";
+						break;
+					default:
+						textMorse = "No es válido lo que se ha introducido";
+				}
+				console.log(textMorse);
+			}
+			
+			//testeo 
+			
+			morse(1);
+			morse(6);
+			morse(10);
+						
+		</script>
+	</head>
+</html>
