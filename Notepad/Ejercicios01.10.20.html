@@ -18,7 +18,120 @@
 			console.log(factorial(3));
 			console.log(factorial(5));
 			
-				
+			// Ejercicio 2 /////////////////////////////////////////////////////
+			
+			function brown(m, n){
+				var factor = factorial(n);
+				var marron = false;
+				if (factor + 1 == m * m){
+					marron = true;
+				}
+				return marron;
+			}
+			
+			var num1 = parseInt(prompt("Escribe un número entre 1 y 100"));
+			var num2 = parseInt(prompt("Escribe otro número entre 1 y 100"));
+			var esbrown = brown(num1, num2);
+			
+			if (esbrown){
+				console.log(num1 + " y " + num2 + " son números de brown");
+			}
+			else {
+				console.log(num1 + " y " + num2 + " no son números de brown");
+			}
+			
+			// Ejercicio 3 /////////////////////////////////////////////////////
+			
+			var sueldo = parseInt(prompt("Sueldo"));
+			sueldo = sueldo * 0.8;
+			console.log("El sueldo es " + sueldo);
+			
+			// Ejercicio 4 /////////////////////////////////////////////////////
+			
+			var n1 = parseInt(prompt("Primer número"));
+			var n2 = parseInt(prompt("Segundo número"));
+			var n3 = parseInt(prompt("Tercer número"));
+			
+			if (n1 + n2 == n3){
+				console.log("Se cumple que " + n1 + "+" + n2 + "=" + n3);
+			}
+			else if (n1 + n3 == n2){
+				console.log("Se cumple que " + n1 + "+" + n3 + "=" + n3);
+			}
+			else if (n2 + n3 == n1){
+				console.log("Se cumple que " + n2 + "+" + n3 + "=" + n1);
+			}
+			else {
+				console.log("No se cumple ninguna suma");
+			}
+			
+			// Ejercicio 5 /////////////////////////////////////////////////////
+			
+			n1 = parseInt(prompt("Primer número"));
+			n2 = parseInt(prompt("Segundo número"));
+			n3 = parseInt(prompt("Tercer número"));
+			var sumas = false;
+			
+			if (n1 + n2 == n3 || n1 + n3 == n2 || n2 + n3 == n1){
+				sumas = true;
+			}
+			
+			if (sumas){
+				console.log("Uno de los números es igual a la suma de los otros dos");
+			}
+			
+			// Ejercicio 6 /////////////////////////////////////////////////////
+			
+			n1 = parseInt(prompt("Primer número"));
+			n2 = parseInt(prompt("Segundo número"));
+			
+			if (n1 % 2 == 0 && n2 % 2 == 0 && n1 < 50 && n2 >= 100 && n2 <= 500){
+				console.log(n1 + n2);
+			}
+			else {
+				console.log("No se cumplen las condiciones");
+			}
+			
+			// Ejercicio 7 /////////////////////////////////////////////////////
+			
+			var venta = parseFloat(prompt("Venta"));
+			
+			if (venta > 20000 && venta <= 100000){
+				venta = venta * 0.95;
+			}
+			else if (venta > 100000){
+				venta = venta * 0.9;
+			}
+			console.log("El precio final es " + venta);
+			
+			// Ejercicio 8 /////////////////////////////////////////////////////
+			
+			var letra = prompt("Introduce A, B, C o M");
+			
+			switch(letra){
+				case "A":
+				case "a":
+					letra = "Altas";
+					break
+				case "B":
+				case "b":
+					letra = "Bajas";
+					break
+				case "C":
+				case "c":
+					letra = "Consultas";
+					break
+				case "M":
+				case "m":
+					letra = "Modificaciones";
+					break
+				default:
+					letra = "Error, debe introducir: A, B, C o M";
+			}
+			
+			console.log(letra);
+			
+			
 		</script>
 	</head>
 </html>

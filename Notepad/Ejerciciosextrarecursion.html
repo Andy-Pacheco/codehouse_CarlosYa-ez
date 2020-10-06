@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<script>
+			// Ejercicio 1 /////////////////////////////////////////////////////
+			
+			function factorial(n){
+				var fact = 1;
+				if (n != 1){
+					fact = n * factorial(n-1);
+				}
+				return fact;
+			}
+			
+			//testeo
+			
+			//console.log(factorial(3));
+			//console.log(factorial(6));
+			
+			// Ejercicio 2 /////////////////////////////////////////////////////
+			
+			function fibonacci(n){
+				var factor = 0;
+				if (n == 0){
+					factor = 0;
+				}
+				else if (n == 1){
+					factor = 1;
+				}
+				else {
+					factor = fibonacci(n-1) + fibonacci(n-2);
+				}
+				return factor
+			}
+			
+			/*testeo
+			console.log(fibonacci(0));
+			console.log(fibonacci(1));
+			console.log(fibonacci(2));
+			console.log(fibonacci(3));
+			console.log(fibonacci(4));
+			console.log(fibonacci(5));
+			console.log(fibonacci(6));
+			console.log(fibonacci(7));
+			console.log(fibonacci(8));
+			console.log(fibonacci(9));
+			console.log(fibonacci(10));
+			*/
+			
+			// Ejercicio 3 /////////////////////////////////////////////////////
+			
+			function cuentadelavieja(m, n){
+				var cociente = 1;
+				if (m - n < 0){
+					cociente = 0;
+				}
+				else if (m - n >= 0){
+					cociente = cociente + cuentadelavieja(m - n, n);
+				}
+				return cociente;
+			}
+			
+			// testeo 
+			
+			//console.log(cuentadelavieja(100, 2));
+			//console.log(cuentadelavieja(10, 20));
+			//console.log(cuentadelavieja(100, 10));
+					
+			// Ejercicio 4 /////////////////////////////////////////////////////
+			
+			function sumadigitos(n){
+				var suma = n % 10;
+				n = parseInt(n / 10);
+				if (n >= 1){
+					suma = suma + sumadigitos(n);
+				}
+				return suma;
+			}
+			
+			//testeo
+			
+			console.log(sumadigitos(0));
+			console.log(sumadigitos(1));
+			console.log(sumadigitos(10));
+			console.log(sumadigitos(21));
+			console.log(sumadigitos(465));
+			console.log(sumadigitos(1234567890));
+
+
+		
+		</script>
+	</head>
+</html>

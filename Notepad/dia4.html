@@ -1,0 +1,158 @@
+<html>
+	<head>
+		<script>
+			var x = null;
+			
+			// Ejercicio clase /////////////////////////////////////////////////
+			
+			function contardesde1(n){
+				if (n != 1){
+					contardesde1(n-1);
+				}
+				console.log(n);
+			}
+			
+			//contardesde1(10);
+			
+			// Ejercicio clase /////////////////////////////////////////////////
+			
+			function validateNumber(n){
+				if (typeof n == "number"){
+					console.log("Es un número");
+				}
+				else {
+					console.log("No es un número");
+				}
+			}
+		
+			/*testeo
+			
+			validateNumber(1);
+			validateNumber(0);
+			validateNumber("a"); */
+
+			/* Teoría
+		
+			var x = 3;
+			
+			x++;	//x = x + 1;		
+			console.log(x);
+			
+			x--; // x = x - 1;
+			console.log(x);
+			
+			
+			++x;
+			console.log(x);
+			
+			--x;
+			console.log(x);
+			
+			
+			
+			var k = 2;			
+			k++;
+			console.log(k);
+			
+			var u = 2;
+			console.log(++u);
+			console.log(u);
+		
+			x = 0;
+			
+			while (x < 5){
+				console.log("ejecución número " + x);
+				x++;
+			}
+			
+			x = 0;
+			
+			while (x < 15){
+				console.log("Qué buen profesor es Carlos! Cuánto aprendo con él!");
+				x++;
+			}
+			
+			var j = 30;
+			
+			while (j <= 20){
+				if (j % 2 == 0){
+					console.log("El " + j + " es par");
+				}
+				else {
+					console.log("El " + j + " es impar");
+				}
+				j++;
+			}
+			
+			// do - while
+			var k = 120000;
+			do {
+				console.log("el valor de k es " + k);
+				
+				k++;
+			}while (k < 10);
+			
+			// usando do - while escribir todos los múltiplos de 2 desde
+			// 0 hasta 20
+			
+			k = 0;
+			do {
+				console.log(k * 2);
+				k++;
+			} while (k <= 10);
+			
+			// un código que muestre todos los números impares entre 0 y 50
+			
+			k = 0;
+			do {
+				console.log(k * 2 + 1);
+				k++;
+			} while (k < 25);
+			
+			
+			// do while o while escribir la tabla del 5 hasta 50
+			
+			k = 0;
+			while (k <= 10){
+				console.log(k * 5);
+				k++;
+			}
+			
+			//bucle for
+			
+			for (var i = 0; i < 10; i++){
+				console.log("Esto pasa 10 veces");
+			}
+			
+			
+			//Multiplos de 3 entre 0 y 100
+			
+			for (var i = 0; i < 34; i++){
+				console.log(i * 3);
+			}
+			*/
+			
+			//Con los 3 bucles, todos los pares entre 0 y 1000
+			//while | do-while | for
+			
+			k = 0;
+			
+			while (k <= 1000){
+				console.log(k);
+				k += 2;
+			}
+			
+			k = 0;
+			
+			do {
+				console.log(k);
+				k += 2;
+			} while (k <= 1000);
+			
+			for (var i = 0; i <= 1000; i += 2){
+				console.log(i);
+			}
+			
+		</script>
+	</head>
+</html>

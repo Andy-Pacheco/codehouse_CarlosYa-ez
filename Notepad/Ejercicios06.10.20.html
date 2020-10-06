@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<script>
+			
+			// Ejercicio 1 /////////////////////////////////////////////////////
+			/*
+			var k = 0;
+			
+			while (k <5){
+				console.log("estamos estudiando los bucles");
+				k++;
+			}
+			*/
+			
+			// Ejercicio 2 /////////////////////////////////////////////////////
+			/*
+			var a = 1;
+			
+			do {
+				console.log(a);
+				a++;
+			} while (a <= 10);
+			*/
+			
+			// Ejercicio 3 /////////////////////////////////////////////////////
+			
+			/*
+			var N = parseInt(prompt("Ejercicio 3"));
+			
+			for (i = 1; i <= N; i++){
+				console.log(i * 2);
+			}
+			*/
+			
+			// Ejercicio 4 /////////////////////////////////////////////////////
+			
+			/*
+			var b = null;
+			var contador = 0;
+			var c = "pivote"
+			do {
+				c = parseFloat(prompt("Escribe un número entero positivo"));
+				if (c < 0 || isNaN(c) || c % 1 != 0){
+					b = "Esto no es un número entero positivo";
+					break
+				}
+				
+				if (c > b){
+					b = c;
+				}
+				contador++;
+			} while (contador < 5);
+			
+			console.log(b);
+			*/
+			
+			// Ejercicio 5 /////////////////////////////////////////////////////
+			
+			/*
+			for (var i = 1; i <= 10; i++){
+				console.log("La tabla del " + i + ":"); //sobra
+				console.log("");						//sobra
+				for (var j = 0; j <= 10; j++){
+					console.log(i + " x " + j + " = " + i * j);
+				}
+				console.log("");						//sobra
+			}
+			*/
+			
+			// Ejercicio 6 /////////////////////////////////////////////////////
+			
+			var n = parseFloat(prompt("Triángulo de floyd de nivel:"));
+			var linea = "Esto vacío cada nivel";
+			var numero = 1;
+			
+			for (var i = 1; i <= n; i++){
+				linea = "";
+				for (var j = 1; j <= i; j++){
+					linea = linea + numero + " ";
+					numero++;
+				}
+				console.log(linea);
+			}
+			
+			// Ejercicio 7 /////////////////////////////////////////////////////
+			
+			for (var h = 0; h < 24; h++){
+				if (h < 10){
+					h = "0" + h;
+				}
+				for (var m = 0; m < 60; m++){
+					if (m < 10){
+						m = "0" + m;
+					}
+					for (var s = 0; s < 60; s++){
+						if (s < 10){
+							s = "0" + s;
+						}
+						console.log(h + ":" + m + ":" + s);
+					}
+				}
+			}
+			
+			//
+		</script>
+	</head>
+</html>
