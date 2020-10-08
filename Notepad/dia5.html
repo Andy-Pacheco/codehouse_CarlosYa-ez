@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<script>
+		
+		// Ejercicio clase /////////////////////////////////////////////////////
+		
+		/*
+		function factorialfor(n){
+			var res = 1;
+			for (i = n; i > 1; i--){
+				res = res * i;
+			}
+			return res;
+		}	
+		
+		function factorialfor2(n){
+			var res = 1;
+			for (i = 1; i <= n; i++){
+				res = res * i;
+			}
+			return res;
+		}	
+		
+		console.log(factorialfor(4));
+		console.log(factorialfor(1));
+		console.log(factorialfor(5));
+		console.log(factorialfor2(4));
+		console.log(factorialfor2(1));
+		console.log(factorialfor2(5));
+		*/
+		
+		// Ejercicio Clase /////////////////////////////////////////////////////
+		
+		/*
+		var res = 0;
+		var n = 10;
+		for (i = 1; i <= n; i++){
+			res = res + i;
+		}
+		console.log(res);
+		*/
+		
+		// Ternarias ///////////////////////////////////////////////////////////
+		
+		/*
+		let num = 6;
+		let res = "";
+		
+		if (num % 2 == 0){
+			res = "es par";
+		}
+		else {
+			res = "es par";
+		}
+		
+		console.log(res);
+		
+		let res2 = num % 2 == 0 ? "es par" : "es impar";
+		
+		console.log(res2);
+		
+		let n = parseFloat(prompt("Introduce número"));
+		
+		let res3 = n >= 0 ? "Es positivo" : "Es negativo";
+		
+		console.log(res3);
+		
+		let m = parseFloat(prompt("Introduce número"));
+			
+		let res4 = m == 1 ? "amarillo" : "negro";
+		
+		console.log(res4);
+		
+		let q = parseFloat(prompt("Introduce número"));
+		
+		let res5 = q >= 60000 ? "Es viejo" : "Es nuevo";
+		
+		console.log(res5);
+		*/
+		
+		let num1 = 10;
+		let num2 = 300;
+		
+		let res6 = num1 % 2 == 0 && num2 % 2 == 0 && num1 < 50 && num2 >= 100 
+		&& num2 <= 500 ? num1 + num2 : "Error";
+		
+		console.log(res6);
+		
+		let year = 1451;
+		
+		let res7 = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? 
+		"Es bisiesto" : "No es bisiesto";
+		
+		console.log(res7);
+		
+		
+		</script
+	</head>
+</html>

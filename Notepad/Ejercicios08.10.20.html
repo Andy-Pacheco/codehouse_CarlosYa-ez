@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<script>
+		
+			// Ejercicio 1 /////////////////////////////////////////////////////
+			
+			let impares = 0;
+			let pares = 0;
+			for (let i = 1; i <= 1000; i++){
+				if (i % 2 == 0){
+					pares += i;
+				}
+				else {
+					impares += i;
+				}
+			}
+			console.log("Ejercicio 1: " + "pares: " + pares + ", impares: " + 
+			+ impares);
+			
+			// Ejercicio 2 /////////////////////////////////////////////////////
+					
+			function sumarn(n){
+				let total = 0;
+				for (let i = 1; i <= n; i++){
+					total += i;
+				}
+				return total;
+			}
+			
+			function lineaNumeros(n){
+				let linea = 1;
+				for (let i = 2; i <= n; i++){
+					linea += " + " + i;
+				}
+				return linea;
+			}
+			
+			let x = 10;
+			console.log("Ejercicio 2: " + lineaNumeros(x) + " = " + sumarn(x));
+			
+			// Ejercicio 3 /////////////////////////////////////////////////////
+			
+			function esValido(num){
+				let res = false;
+				if (isNaN(num) == false && num % 1 == 0 && typeof num == 
+				"number"){
+					res = true;
+				}
+				return res;
+			}
+
+			let i = 0;
+			let b = -Infinity;
+			let c = "pivote";
+			
+			while (i < 5){
+				c = parseFloat(prompt("Ej. 3 Escribe un número entero"));
+				if (esValido(c) == true){
+					if (c > b){
+						b = c;
+					}
+					i++;
+				}
+			}
+			console.log("Ejercicio 3: el mayor ha sido " + b);
+				
+			// Ejercicio 4 /////////////////////////////////////////////////////
+			
+			let a = 4;
+			let asterisk = "";
+			console.log("Ejercicio 4: para " + a);
+			
+			for (let i = 0; i < a; i++){
+				asterisk += "*";
+				console.log(asterisk);
+			}
+					
+		
+		</script
+	</head>
+</html>

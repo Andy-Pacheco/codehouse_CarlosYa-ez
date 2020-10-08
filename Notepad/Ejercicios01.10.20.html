@@ -29,6 +29,14 @@
 				return marron;
 			}
 			
+			for (i = 1; i <= 100; i++){
+				for (j = 1; j <= 100; j++){
+					if (brown(i, j)){
+						console.log(j + ", " + i + " son números de Brown");
+					}
+				}
+			}
+			
 			var num1 = parseInt(prompt("Escribe un número entre 1 y 100"));
 			var num2 = parseInt(prompt("Escribe otro número entre 1 y 100"));
 			var esbrown = brown(num1, num2);
