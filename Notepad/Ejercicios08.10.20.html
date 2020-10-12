@@ -74,7 +74,183 @@
 				asterisk += "*";
 				console.log(asterisk);
 			}
-					
+			
+			// Ejercicio 5 /////////////////////////////////////////////////////
+			
+			function potencias(base, exp){
+				let res = base;
+				for (let i = 1; i < exp; i++){
+					res *= base;
+				}
+				return res;
+			}
+			
+			// testeo
+			
+			console.log("Ejercicio 5: 2 elevado a 3 es " + potencias(2,3));
+			//console.log("3 elevado a 2 " + potencias(3,2));
+			//console.log("1 elevado a 300 " + potencias(1,300));
+			//console.log("4 elevado a 4 " + potencias(4,4));
+			
+			// Ejercicio 6 /////////////////////////////////////////////////////
+			
+			function creaCadenas(string, n){
+				let palabra = string;
+				for (let i = 0; i < n - 1; i++){
+					string += palabra;
+				}
+				return string;
+			}
+			
+			function concaCadenas(numero, repeticiones){
+				let cadena = "";		
+				for (let i = 0; i < repeticiones; i++){
+					cadena += creaCadenas(numero, i) + " ";
+				}
+				return cadena;
+			}
+			
+			function sumaCadenas(){
+				let numero = prompt("Introduce el número");
+				let repeticiones = parseInt(prompt("Introduce las repeticiones"));
+				let suma = 0;
+				for (let i = 1; i <= repeticiones; i++){
+					suma += parseInt(creaCadenas(numero, i)); 
+				}
+				console.log(concaCadenas(numero, repeticiones));
+				return suma;
+			}
+			
+			console.log("Ejercicio 6: El resultado de la suma es " + 
+				+ sumaCadenas());
+			
+			// Ejercicio 7 /////////////////////////////////////////////////////
+			
+			function puntos(n){
+				let linea = "";
+				for (let i = 0; i < n; i++){
+					linea += ".";
+				}
+				return linea;
+			}
+			
+			function numeros(n){
+				let linea = "";
+				for (let i = 0; i < n; i++){
+					linea += n;
+				}
+				return linea;
+			}
+			
+			let iteraciones = parseInt(prompt("Ejercicio 7: Introduce iteraciones"));
+			for (let j = 0; j < iteraciones; j++){
+				console.log(puntos(iteraciones - 1 - j) + numeros(j + 1));
+			}
+			
+			// Ejercicio 8 /////////////////////////////////////////////////////
+			
+			for (let a = 0; a < 8; a++){
+				let linea = "";
+				for (let b = 0; b < 8; b++){
+					if (a % 2 == 0){
+						if (b % 2 == 0){
+							linea += "_";
+						}
+						else {
+							linea += "#";
+						}
+					}
+					else {
+						if (b % 2 == 0){
+							linea += "#";
+						}
+						else {
+							linea += "_";
+						}
+					}
+				}
+				console.log(linea);
+			}
+						
+			
+			// Ejercicio 9 /////////////////////////////////////////////////////
+			
+			let numero = 1991;
+			let factores = "";
+			let numero2 = numero;
+			
+			while(numero2 > 1){
+				let factor = 2;
+				while(numero2 % factor != 0){
+					factor++;
+				}
+				if (factores == ""){
+					factores += factor;
+				}
+				else {
+					factores += " * " + factor;
+				}
+				numero2 = numero2 / factor;
+			}
+			
+			console.log("Ejercicio 9: " + numero + " = " + factores); 
+			
+			// Ejercicio 10 ////////////////////////////////////////////////////
+			
+			let n1 = 0;
+			let n2 = 1;
+			let fibonacci = n2;
+			let N = 8;
+			for (let i = 0; i < N - 1; i++){
+				let n3 = n1 + n2;
+				fibonacci += ", " + n3;
+				n1 = n2;
+				n2 = n3;
+			}
+			
+			console.log("Ejercicio 10: " + fibonacci);
+			
+			// Ejercicio 11 ////////////////////////////////////////////////////
+			
+			for (let i = 0; i < 10; i++){
+				if (i < 5){
+					let stringAB = "AB";
+					for (let j = 0; j < i; j++){
+						stringAB = "A" + stringAB + "B";
+					}
+					console.log(stringAB);
+				}
+				else {
+					let stringCD = "CD";
+					for (let j = 0; j < 9 - i; j++){
+						stringCD = "C" + stringCD + "D";
+					}
+					console.log(stringCD);	
+				}
+			}
+				
+			
+			// Ejercicio 12 ////////////////////////////////////////////////////
+			
+			function reloj(segundos){
+				let sec = segundos % 60;
+				let resto = (segundos - sec) / 60;
+				if (sec < 10){
+					sec = "0" + sec;
+				}
+				let min = resto % 60;
+				resto = (resto - min) / 60;
+				if (min < 10){
+					min = "0" + min;
+				}
+				let horas = resto % 24;
+				if (horas < 10){
+					horas = "0" + horas;
+				}
+				return horas + ":" + min + ":" + sec;
+			}
+			
+			console.log("Ejercicio 12: " + reloj(86705));
 		
 		</script
 	</head>
