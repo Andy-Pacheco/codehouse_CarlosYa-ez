@@ -50,18 +50,22 @@
 			}
 
 			let i = 0;
-			let b = -Infinity;
+			let b;
 			let c = "pivote";
 			
-			while (i < 5){
+			do{
 				c = parseFloat(prompt("Ej. 3 Escribe un número entero"));
+				if (i == 0){
+					b = c;
+				}
+				
 				if (esValido(c) == true){
 					if (c > b){
 						b = c;
 					}
 					i++;
 				}
-			}
+			}while(i < 5)
 			console.log("Ejercicio 3: el mayor ha sido " + b);
 				
 			// Ejercicio 4 /////////////////////////////////////////////////////
@@ -104,7 +108,7 @@
 			
 			function concaCadenas(numero, repeticiones){
 				let cadena = "";		
-				for (let i = 0; i < repeticiones; i++){
+				for (let i = 1; i <= repeticiones; i++){
 					cadena += creaCadenas(numero, i) + " ";
 				}
 				return cadena;
@@ -178,9 +182,9 @@
 			let numero = 1991;
 			let factores = "";
 			let numero2 = numero;
-			
+			let factor = 2;
 			while(numero2 > 1){
-				let factor = 2;
+				// let factor = 2; esto tiene que ir fuera
 				while(numero2 % factor != 0){
 					factor++;
 				}
@@ -201,8 +205,9 @@
 			let n2 = 1;
 			let fibonacci = n2;
 			let N = 8;
+			let n3;
 			for (let i = 0; i < N - 1; i++){
-				let n3 = n1 + n2;
+				n3 = n1 + n2;
 				fibonacci += ", " + n3;
 				n1 = n2;
 				n2 = n3;

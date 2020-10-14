@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<script>
+		
+		console.log("");console.log("Ejercicio 1:"); ///////////////////////////
+		
+		function obtenerNumeroAleatorio(min, max) {
+			return parseInt(Math.random() * ((max + 1) - min) + min);
+		}
+		
+		let alfa = new Array(20);
+		let min = 0;
+		let max = 20;
+		
+		for (let i = 0; i < alfa.length; i++){
+			alfa[i] = obtenerNumeroAleatorio(min, max);
+		}
+		
+		console.log(alfa);
+		
+		console.log("");console.log("Ejercicio 2:");  //////////////////////////
+		
+		let beta = new Array("Luna", "Ganímedes", "Europa", "Calixto", "Io");
+		
+		console.log(beta[0]);
+		console.log(beta[1]);
+		console.log(beta[2]);
+		console.log(beta[3]);
+		console.log(beta[4]);
+		
+		for (let i = 0; i < beta.length; i++){
+			console.log(beta[i]);
+		}
+		
+		console.log("");console.log("Ejercicio 3:");  //////////////////////////
+		
+		let gamma = new Array(20, 5, 9, 63, 28, 27);
+		longitud = 0; 
+		
+		while (gamma[longitud] != undefined){
+			longitud++;
+		}
+		
+		console.log(longitud);
+		
+		console.log("");console.log("Ejercicio 4:");  //////////////////////////
+		
+		let delta = new Array(1, 2, 3, 4, 5, 6);
+		let i = 0;
+		let falsoDelta = delta;
+		let sumaDelta = 0;
+		let mediaDelta = 0;
+		
+		while (i < delta.length){
+			console.log(delta[i]);
+			i++;
+		}
+		
+		for (let i = 0; i < delta.length; i++){
+			console.log(delta[i]);
+		}
+		
+		for (let i = 0; i < delta.length; i++){
+			console.log(delta[i]+1);
+		}
+		
+		for (let i = 0; i < delta.length; i++){
+			falsoDelta[i] += 1;
+		}
+		console.log(falsoDelta);
+		
+		for (let i = 0; i < delta.length; i++){
+			sumaDelta += delta[i];
+		}	
+		mediaDelta = sumaDelta / delta.length;
+		console.log(mediaDelta);
+
+		
+
+		
+		console.log("");console.log("Ejercicio 5:");  //////////////////////////
+		console.log("");console.log("Ejercicio 6:");  //////////////////////////
+		console.log("");console.log("Ejercicio 7:");  //////////////////////////
+		console.log("");console.log("Ejercicio 8:");  //////////////////////////
+		console.log("");console.log("Ejercicio 9:");  //////////////////////////
+		console.log("");console.log("Ejercicio 10:"); //////////////////////////
+	
+		</script
+	</head>
+</html>

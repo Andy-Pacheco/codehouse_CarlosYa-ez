@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<script>
+		/*
+		let n = 5;
+		let texto = "";
+		let suma = 0;
+		
+		for (let i = 1; i <= n; i++){
+			suma = suma + i; //suma += i;
+			texto += i < n ? i + " + ": i + " ";			
+		}
+		console.log("Dado el " + n + " es " + texto + "= " + suma);	
+		
+		let text;
+		for (let i = 0; i < 8; i++){
+			text = "";
+			for (let j = 0; j < 8; j++){
+				text += (i + j) % 2 == 0 ? "_" : "#";
+			}
+			console.log(text);
+		}
+			
+		var n = 162000;
+		var operado = n;
+		var divisor = 2;
+		var acum = "";
+		while (operado != 1){
+			if (operado % divisor == 0){
+				acum += divisor;
+				if (operado != divisor){
+					acum += " * ";
+				}
+				operado = operado / divisor;
+			}
+			else {
+				divisor++;
+			}
+			console.log("acum: " + acum);
+			console.log("operado: " + operado);
+			console.log("divisor: " + divisor);
+		}
+		
+		console.log(acum); */
+		
+		//Frutas y precios
+		
+		let aguacate = 1;
+		let albaricoque = 2;
+		let platano = 1.5;
+		let cereza = 5.8;
+		let ciruela = 1.55;
+		let coco = 4.5;
+		let lima = 3.5
+		let melocoton  = 2;
+		let frambuesa = 6;
+		let fresa = 5;
+		let kiwi = 2;
+		let limon = 0.75;
+		let mandarina = 2;
+		let mango = 4;
+		let manzana = 0.9;
+		let naranja = 0.9;
+		let papaya = 4.6
+		let pera = 2;
+		let higo = 4.3;
+		let pina = 3.6;
+		
+		let recibo = aguacate + albaricoque + platano + cereza + ciruela + coco  
+					+ lima + melocoton + frambuesa + fresa + kiwi + limon + 
+					mandarina + mango + manzana + naranja + papaya + pera + 
+					higo + pina;
+		
+		console.log(recibo);
+		
+		let vengadores = new Array("Cap America", "Thor", "Viuda Negra", "Iron" +
+									+ "Man");
+		console.log(vengadores);
+		
+		let numeros = new Array(5, 2, 3, 4, 1);
+		
+		for (let i = 0; i < numeros.length; i++){
+			console.log(numeros[i]);
+		}
+		
+		// modificar la info
+		
+		for (let i = 0; i < numeros.length; i++){
+			numeros[i] += 1;
+		}
+		
+		console.log(numeros);
+		
+		//dado el siguiente arra, modificarlo para que devuelva cada valor
+		//dividido entre 2 -> (70, 41, 69, 32, 58, 5)
+		
+		let vector = new Array(70, 41, 69, 32, 58, 5);
+		
+		for (let i = 0; i < vector.length; i++){
+			vector[i] /= 2;
+		}
+		
+		console.log(vector);
+		
+		//media de (82, 12, 14, 71, 85)
+		
+		let alfa = new Array(82, 12, 14, 71, 85);
+		let suma = 0;
+		
+		for (let i = 0; i < alfa.length; i++){
+			suma += alfa[i];
+		}
+		
+		suma /= alfa.length;
+		
+		console.log(suma);
+		
+		//subir un 20% de sueldo a todos (25000, 31000, 18500, 23250, 34500)
+		
+		let beta = new Array(25000, 31000, 18500, 23250, 34500);
+		
+		for (let i = 0; i < beta.length; i++){
+			beta[i] = beta[i] * 1.2;
+		}
+		
+		console.log(beta);		
+		
+		</script
+	</head>
+</html>
