@@ -2,89 +2,259 @@
 	<head>
 		<script>
 		
-		console.log("");console.log("Ejercicio 1:"); ///////////////////////////
+			console.log("");console.log("Ejercicio 1:"); ///////////////////////////
+			
+			function obtenerNumeroAleatorio(min, max) {
+				return parseInt(Math.random() * ((max + 1) - min) + min);
+			}
+			
+			let alfa = new Array(20);
+			let min = 0;
+			let max = 20;
+			
+			for (let i = 0; i < alfa.length; i++){
+				alfa[i] = obtenerNumeroAleatorio(min, max);
+			}
+			
+			console.log(alfa);
+			
+			console.log("");console.log("Ejercicio 2:");  //////////////////////////
+			
+			let beta = new Array("Luna", "Ganímedes", "Europa", "Calixto", "Io");
+			
+			console.log(beta[0]);
+			console.log(beta[1]);
+			console.log(beta[2]);
+			console.log(beta[3]);
+			console.log(beta[4]);
+			
+			for (let i = 0; i < beta.length; i++){
+				console.log(beta[i]);
+			}
+			
+			console.log("");console.log("Ejercicio 3:");  //////////////////////////
+			
+			let gamma = new Array(20, 5, 9, 63, 28, 27);
+			longitud = 0; 
+			
+			while (gamma[longitud] != undefined){
+				longitud++;
+			}
+			
+			console.log(longitud);
+			
+			console.log("");console.log("Ejercicio 4:");  //////////////////////////
+			
+			let delta = new Array(1, 2, 3, 4, 5, 6);
+			let i = 0;
+			let falsoDelta = delta;
+			let sumaDelta = 0;
+			let mediaDelta = 0;
+			
+			while (i < delta.length){
+				console.log(delta[i]);
+				i++;
+			}
+			
+			for (let i = 0; i < delta.length; i++){
+				console.log(delta[i]);
+			}
+			
+			for (let i = 0; i < delta.length; i++){
+				console.log(delta[i]+1);
+			}
+			
+			for (let i = 0; i < delta.length; i++){
+				falsoDelta[i] += 1;
+			}
+			console.log(falsoDelta);
+			
+			for (let i = 0; i < delta.length; i++){
+				sumaDelta += delta[i];
+			}	
+			mediaDelta = sumaDelta / delta.length;
+			console.log(mediaDelta);
 		
-		function obtenerNumeroAleatorio(min, max) {
-			return parseInt(Math.random() * ((max + 1) - min) + min);
-		}
+			console.log("");console.log("Ejercicio 5:");  //////////////////////////
+			
+			let epsilon = new Array("azul", "amarillo", "rojo", "verde", "negro", "gris");
+			let guess = prompt("Introduce un color");
+			let pertenece = false;
+			for (let i = 0; i < epsilon.length && pertenece == false; i++){
+				if (guess == epsilon[i]){ 
+					pertenece = true;
+				}
+			}
+			let res = pertenece == true ? "Pertenece en el array" : "No pertenece"
+			console.log(res);
+			
+			console.log("");console.log("Ejercicio 6:");  //////////////////////////
+			
+			let zeta = new Array(1, 2, 3, 4, 5);
+			let theta = new Array(5, 4, 3, 2, 1);
+			
+			function sumaArrays(a1, a2){
+				if (a1.length != a2.length){
+					console.log("No son del mismo tamaño");
+				}
+				else {
+					let iota = new Array(a1.length);
+					for (let i = 0; i < a1.length; i++){
+						iota[i] = a1[i] + a2[i];
+					}
+					return iota;
+				}
+			}
+			
+			console.log(sumaArrays(zeta, theta));
+			
+			
+			console.log("");console.log("Ejercicio 7:");  //////////////////////////
+			
+			let kappa = new Array(1, 2, 3, 4, 5);
+			let lamda = new Array(5, 4, 3, 2, 1);
+			let mu = new Array(kappa.length + lamda.length);
+			
+			for (let i = 0; i < mu.length; i++){
+				if (i % 2 == 0){
+					mu[i] = kappa [i / 2];
+				}
+				else{
+					mu[i] = lamda[(i + 1) / 2];
+				}
+			}
+			
+			console.log(mu);			
+			
+			
+			console.log("");console.log("Ejercicio 8:");  //////////////////////////
+			
+			let tirada;
+			let dados = new Array(0, 0, 0, 0, 0, 0);
+			
+			for (let i = 0; i < 1000; i++){
+				tirada = obtenerNumeroAleatorio(1, 6);
+				switch(tirada){
+					case 1:
+						dados[0] += 1;
+						break;
+					case  2:
+						dados[1] += 1;					
+						break;
+					case 3:
+						dados[2] += 1;					
+						break;
+					case 4:
+						dados[3] += 1;					
+						break;
+					case 5:
+						dados[4] += 1;					
+						break;
+					case 6:
+						dados[5] += 1;
+						break;
+				}
+			}
+						
+			console.log(dados);
+			
+			console.log("");console.log("Ejercicio 9:");  //////////////////////////
+			
+			let nu = new Array("Mango", "Manzana", "Banana");
+			let omicron = new Array("Pera", "Naranja", "Fresa") ;
+			
+			function anadirElemento(arryto, elemento){
+				let arrytoMasUno = new Array(arryto.length + 1);
+				for (let i = 0; i < arryto.length; i++){
+					arrytoMasUno[i] = arryto[i];
+				}
+				arrytoMasUno[arryto.length] = elemento;
+				return arrytoMasUno
+			}
+			
+			console.log(anadirElemento(nu, "Kiwi"));
+			
+			function borraElemento(arryto, elemento){
+				let arrytoMenosUno = new Array(arryto.length - 1);
+				let posicion = 0;
+				for (let i = 0; i < arryto.length; i++){
+					if (arryto[i] != elemento){
+						arrytoMenosUno[posicion] = arryto[i];
+						posicion++;
+					}
+				}
+				return arrytoMenosUno;
+			}
+			
+			console.log(borraElemento(nu, "Mango"));
+			
+			function alfabetico(arryto){
+				let arrytoAlfabeto = new Array(arryto.length);
+				let contador = 0;
+				let primeraletra = arryto[0];
+				let n = arryto.length;
+				while (contador < n){
+					for (i = 0; i < arryto.length; i++){
+						if (arryto[i] < primeraletra){
+							primeraletra = arryto[i];
+						}
+					}
+					arrytoAlfabeto[contador] = primeraletra;
+					contador++;
+					arryto = borraElemento(arryto, primeraletra);
+					primeraletra = arryto[0];
+				}
+				return arrytoAlfabeto;
+			}
+			
+			console.log(alfabetico(nu));
+			
+			function concatenados(nu1, nu2){
+				let nunu = new Array(nu1.length + nu2.length);
+				for (let i = 0; i < nunu.length; i++){
+					if (i < nu1.length){
+						nunu[i] = nu1[i];
+					}
+					else{
+						nunu[i] = nu2[i - nu1.length];
+					}
+				}
+				return nunu;
+			}
+			
+			console.log(concatenados(nu, omicron));
+			
+			console.log("");console.log("Ejercicio 10:"); //////////////////////////
+			
+			function sacaNumeros(linea){
+				let contador = 0;
+				for (let i = 0; i < linea.length; i++){
+					if (isNaN(linea[i]) == false){
+						contador++;
+					}
+				}
+				return contador;
+			}
+			
+			let psi = new Array(1, 38, "a", "pepe5", 18, "zz-top", "54", 6);
+			let numeros = sacaNumeros(psi);
+			let psiNumerico = new Array(numeros);
+			let cuenta = 0;
+			for (let i = 0; i < psi.length; i++){
+				if (isNaN(psi[i]) == false){
+					psiNumerico[cuenta] = psi[i];
+					cuenta++;
+				}
+			}
+			
+			let mayor = psiNumerico[0];
+			for (let i = 1; i < psiNumerico.length; i++){
+				if (psiNumerico[i] > mayor){
+					mayor = psiNumerico[i];
+				}
+			}
+			console.log(mayor);
 		
-		let alfa = new Array(20);
-		let min = 0;
-		let max = 20;
-		
-		for (let i = 0; i < alfa.length; i++){
-			alfa[i] = obtenerNumeroAleatorio(min, max);
-		}
-		
-		console.log(alfa);
-		
-		console.log("");console.log("Ejercicio 2:");  //////////////////////////
-		
-		let beta = new Array("Luna", "Ganímedes", "Europa", "Calixto", "Io");
-		
-		console.log(beta[0]);
-		console.log(beta[1]);
-		console.log(beta[2]);
-		console.log(beta[3]);
-		console.log(beta[4]);
-		
-		for (let i = 0; i < beta.length; i++){
-			console.log(beta[i]);
-		}
-		
-		console.log("");console.log("Ejercicio 3:");  //////////////////////////
-		
-		let gamma = new Array(20, 5, 9, 63, 28, 27);
-		longitud = 0; 
-		
-		while (gamma[longitud] != undefined){
-			longitud++;
-		}
-		
-		console.log(longitud);
-		
-		console.log("");console.log("Ejercicio 4:");  //////////////////////////
-		
-		let delta = new Array(1, 2, 3, 4, 5, 6);
-		let i = 0;
-		let falsoDelta = delta;
-		let sumaDelta = 0;
-		let mediaDelta = 0;
-		
-		while (i < delta.length){
-			console.log(delta[i]);
-			i++;
-		}
-		
-		for (let i = 0; i < delta.length; i++){
-			console.log(delta[i]);
-		}
-		
-		for (let i = 0; i < delta.length; i++){
-			console.log(delta[i]+1);
-		}
-		
-		for (let i = 0; i < delta.length; i++){
-			falsoDelta[i] += 1;
-		}
-		console.log(falsoDelta);
-		
-		for (let i = 0; i < delta.length; i++){
-			sumaDelta += delta[i];
-		}	
-		mediaDelta = sumaDelta / delta.length;
-		console.log(mediaDelta);
-
-		
-
-		
-		console.log("");console.log("Ejercicio 5:");  //////////////////////////
-		console.log("");console.log("Ejercicio 6:");  //////////////////////////
-		console.log("");console.log("Ejercicio 7:");  //////////////////////////
-		console.log("");console.log("Ejercicio 8:");  //////////////////////////
-		console.log("");console.log("Ejercicio 9:");  //////////////////////////
-		console.log("");console.log("Ejercicio 10:"); //////////////////////////
-	
 		</script
 	</head>
 </html>
