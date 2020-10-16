@@ -120,7 +120,7 @@
 					mu[i] = kappa [i / 2];
 				}
 				else{
-					mu[i] = lamda[(i + 1) / 2];
+					mu[i] = lamda[(i - 1) / 2];
 				}
 			}
 			
@@ -254,6 +254,30 @@
 				}
 			}
 			console.log(mayor);
+			
+			let datos = new Array("Roman", "Javier", "Veronika", "Carlos", "Laura", "Alba", "Edu", "Philipp");
+
+			let nums = new Array(11, 22, 9, 8, 4, 66, 13, 24, 29, 36, 31, 1, 2, 8, 10, 14);
+
+			datos.sort(
+				function (a, b){
+					a = a.toLowerCase();
+					b = b.toLowerCase();
+				}
+			);
+			let nueva = datos.sort();
+			console.log(nueva);
+			
+			numeros.sort(
+				function (a, b){
+					return a - b;
+				}
+			);
+			
+			let numnueva = numeros.sort()
+			console.log(numnueva);
+			
+			
 		
 		</script
 	</head>

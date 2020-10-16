@@ -26,10 +26,43 @@
 		
 		/**//**//**/console.log("");console.log("Ejercicio 3:") ////////////////
 		
+		let beta = new Array(1, 2, 3, 4, 5, 6, 7);
+		let longitud = 0;
+		
+		for (let i = 0; beta[i] != undefined; i++){
+			longitud++;
+		}
+		
+		console.log(longitud);
+		
 		/**//**//**/console.log("");console.log("Ejercicio 4:") ////////////////
+		
+		let gamma = new Array(1, 2, 3, "esto fuera", 4, 5);
+		
+		function quitaElemento(v, position){
+			let vBien = new Array(v.length -1);
+			j = 0;
+			for (i = 0; i < v.length; i++){
+				if (i != position){
+					vBien[j] = v[i];
+					j++;
+				}
+			}
+			return vBien;
+		}
+		
+		console.log(quitaElemento(gamma, 3));
 		
 		/**//**//**/console.log("");console.log("Ejercicio 5:") ////////////////
 		
+		let delta = new Array(1, 2, 3, 4, 5);
+		let copiaDelta = new Array(delta.length);
+		
+		for (i = 0; i < delta.length; i++){
+			copiaDelta[i] = delta[i];
+		}
+		
+		console.log(copiaDelta);
 			
 		</script
 	</head>
