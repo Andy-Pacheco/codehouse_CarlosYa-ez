@@ -236,16 +236,17 @@
 				return contador;
 			}
 			
-			let psi = new Array(1, 38, "a", "pepe5", 18, "zz-top", "54", 6);
-			let numeros = sacaNumeros(psi);
-			let psiNumerico = new Array(numeros);
-			let cuenta = 0;
-			for (let i = 0; i < psi.length; i++){
-				if (isNaN(psi[i]) == false){
-					psiNumerico[cuenta] = psi[i];
-					cuenta++;
+			function checkNumbers(data){
+				let allAreNumbers = true;
+				for (let i = 0; i < data.length && allAreNumbers; i++){
+					if (isNaN(data[i])){
+						allAreNumbers = false;
+					}
 				}
+				return allAreNumbers;
 			}
+			
+			let numeros = new Array(8,1,"Hola",5,9,0,4);
 			
 			let mayor = psiNumerico[0];
 			for (let i = 1; i < psiNumerico.length; i++){

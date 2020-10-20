@@ -15,6 +15,53 @@
 			}
 			console.log(found);
 			
+			let data = new Array(
+				new Array(1,2,3,4),
+				new Array("a", "b", "c", "d"),
+				new Array("do", "re", "mi", "fa")			
+			);
+			
+			let palabra = prompt();
+			found = false;
+			for (let i = 0; i < data.length && !found; i++){
+				for (let j = 0; j < data[i].length && !found; j++){
+					if (palabra == data[i][j]){
+						console.log("position i: " + i + ", j: " + j);
+					}
+				}
+			}
+			
+			let barquitos = new Array(
+				new Array("x", "x", "x", "A"),
+				new Array("x", "x", "x", "A"),
+				new Array("x", "x", "x", "x"),
+				new Array("x", "x", "x", "x")
+			);
+			
+			let barquitos2 = new Array(
+				new Array("x", "x", "x", "x"),
+				new Array("x", "x", "x", "x"),
+				new Array("A", "A", "A", "x"),
+				new Array("x", "x", "x", "x")
+			);
+
+			function hundirlaflota(barcos){
+				let longitud = 0;
+				for (let i = 0; i < barcos.length; i++){
+					for (let j = 0; j < barcos[i].length; j++){
+						if (barcos[i][j] == "A"){
+
+							longitud += 1;
+						}
+					}
+				}
+				return longitud;
+			}
+			
+			console.log("longitud " + hundirlaflota(barquitos));
+			console.log("longitud " + hundirlaflota(barquitos2));
+
+			
 		</script
 	</head>
 </html>

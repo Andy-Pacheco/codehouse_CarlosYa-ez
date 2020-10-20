@@ -1,0 +1,208 @@
+<html>
+	<head>
+		<script>
+			
+			console.log("");console.log("Ejercicio 5:"); ///////////////////////
+			
+			let alfa = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+			
+			function half(data){
+				let data2 = new Array(data.length); 
+				for (let i = 0; i < data.length; i++){
+					data2[i] = data[i] / 2;
+				}
+				return data2;
+			}
+			
+			console.log(half(alfa));
+					
+			console.log("");console.log("Ejercicio 6:"); ///////////////////////
+			
+			function popEnd(data, element){
+				let data2 = new Array(data.length + 1); 
+				for (let i = 0; i < data.length; i++){
+					data2[i] = data[i];
+				}
+				data2[data.length] = element;
+				return data2;
+			}
+			
+			console.log(popEnd(alfa, "funciona"));
+			
+			console.log("");console.log("Ejercicio 7:"); ///////////////////////
+			
+			function last(data){
+				return data[data.length-1];
+			}
+
+			console.log(last(alfa));
+			
+			console.log("");console.log("Ejercicio 8:"); ///////////////////////
+			
+			function reverse(data){
+				let data2 = new Array(data.length );
+				for (let i = 0; i < data.length; i++){
+					data2[data.length - i - 1] = data[i];
+				}
+				return data2;
+			}
+			
+			console.log(reverse(alfa));
+			
+			console.log("");console.log("Ejercicio 9:"); ///////////////////////
+			
+			function cut(data, position){
+				let data2 = new Array(position + 1);
+				for (let i = 0; i < data2.length; i++){
+					data2[i] = data[i];
+				}
+				return data2;
+			}
+			
+			console.log(cut(alfa,5));
+			
+			console.log("");console.log("Ejercicio 10:"); //////////////////////
+			
+			function cutEnd(data, position){
+				let data2;
+				if (position >= data.length){
+					data2 = -1;
+				}
+				else {					
+					data2 = new Array(data.length - position);
+					for (let i = position; i < data.length; i++){
+						data2[i - position] = data[i];
+					}
+				}
+				return data2;
+			}
+			
+			console.log(cutEnd(alfa,7));
+			
+			console.log("");console.log("Ejercicio 1:"); ///////////////////////
+			
+			let ejercicio1 = new Array(
+				new Array(10, 12, 43, 20),
+				new Array(11, 95, 40, 8),
+				new Array(71, 66, 44, 92)
+			);
+			
+			for (let i = 0; i < ejercicio1.length; i++){
+				console.log(ejercicio1[i]);
+			}
+					
+			console.log("");console.log("Ejercicio 2:"); ///////////////////////
+			
+			let suma = 0;
+			let casillas = 0;
+			for (let i = 0; i < ejercicio1.length; i++){
+				for (let j = 0; j < ejercicio1[i].length; j++){
+					suma += ejercicio1[i][j];
+					casillas++;
+				}
+			}
+			
+			console.log(suma / casillas);
+			
+			console.log("");console.log("Ejercicio 3:"); ///////////////////////
+			
+			for (let i = 0; i < ejercicio1.length; i++){
+				let comodin = new Array(ejercicio1[i].length);
+				for (let j = 0; j < comodin.length; j++){
+					comodin[j] = ejercicio1[i][j] + 1;
+				}
+				console.log(comodin);
+			}
+			
+			console.log("");console.log("Ejercicio 4:"); ///////////////////////
+			
+			suma = 0;
+			for (let i = 0; i < ejercicio1[0].length; i++){
+				suma += ejercicio1[0][i];
+			}
+			
+			console.log(suma);
+			
+			console.log("");console.log("Ejercicio 5:"); ///////////////////////
+			
+			suma = 0;
+			for (let i = 0; i < ejercicio1.length; i++){
+				suma += ejercicio1[i][0];
+			}
+			
+			console.log(suma);
+			
+			console.log("");console.log("Ejercicio 6:"); ///////////////////////
+			
+			let mayor = ejercicio1[0][0];
+			
+			for (let i = 0; i < ejercicio1.length; i++){
+				for (let j = 0; j < ejercicio1[i].length; j++){
+					if (ejercicio1[i][j] > mayor){
+						mayor = ejercicio1[i][j];
+					}
+				}
+			}
+			
+			console.log(mayor);
+					
+			
+			console.log("");console.log("Ejercicio 7:"); ///////////////////////
+			
+			let ej7 = new Array(2);
+			contador = 5;
+			for (let i = 0; i < ej7.length; i++){
+				ej7[i] = new Array(3);
+				for (j = 0; j < ej7[i].length; j++){
+					ej7[i][j] = contador;
+					contador++;
+				}
+			}
+			
+			console.log(ej7);
+			
+			console.log("");console.log("Ejercicio 8:"); ///////////////////////
+			
+			let ej8 = new Array(2);
+			for (let i = 0; i < ej8.length; i++){
+				contador = 5 + i;
+				ej8[i] = new Array(3);
+				for (j = 0; j < ej8[i].length; j++){
+					ej8[i][j] = contador;
+					contador += 2;
+				}
+			}
+			
+			console.log(ej8);
+			
+			console.log("");console.log("Ejercicio 9:"); ///////////////////////
+			
+			let ej9 = new Array(3);
+			contador = 5;
+			for (let i = 0; i < ej9.length; i++){
+				ej9[i] = new Array(2);
+				for (j = 0; j < ej9[i].length; j++){
+					ej9[i][j] = contador;
+					contador++;
+				}
+			}
+			
+			console.log(ej9);
+			
+			console.log("");console.log("Ejercicio 10:"); ///////////////////////
+
+			let ej10 = new Array(3);
+			for (let i = 0; i < ej10.length; i++){
+				contador = 5 + i;
+				ej10[i] = new Array(2);
+				for (j = 0; j < ej10[i].length; j++){
+					ej10[i][j] = contador;
+					contador += 3;
+				}
+			}
+			
+			console.log(ej10);
+			
+		</script
+	</head>
+</html>
