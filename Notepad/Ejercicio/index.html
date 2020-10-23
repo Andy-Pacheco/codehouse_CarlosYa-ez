@@ -1,0 +1,290 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+<head>
+	<!--<script type="text/javascript" src="./prueba.js">-->
+	<script>
+	
+		function Luz(color){
+			this.estado = false;
+			this.color = color;
+			
+			Luz.prototype.encender = function(){
+				this.estado = true;
+			}
+			
+			Luz.prototype.getColor = function(){
+				return this.color;
+			}
+			
+			Luz.prototype.apagar = function(){
+				this.estado = false;
+			}
+			
+			Luz.prototype.verEstado = function(){
+				if (this.estado == true){
+					console.log("Encendida " + this.color);
+				}
+				else  {
+					console.log("Apagada " + this.color);
+				}
+			}
+		}
+		
+		let luz1 = new Luz("Roja");
+		let datos = new Array();
+		
+		luz1.verEstado();
+		luz1.encender();
+		luz1.verEstado();
+		
+		
+		function User(username, password){
+			this.username = username;
+			this.password = password;
+			
+			User.prototype.getUsername = function(){
+				return this.username;
+			}
+			
+			User.prototype.getPassword = function(){
+				return this.password;
+			}
+				
+			User.prototype.login = function(username, password){
+				let correct = false;
+				
+				if (this.username == username && this.password == password){
+					correct = true;
+				}
+				
+				return correct;
+			}
+		}
+		
+		let userDiego = new User("johnnyPistolas23", "1234");
+		let userVeronika = new User("V31hDesign", "alaricaarepa");
+		
+		let loginOk = userVeronika.login("V31hDesign", "alaricaarepa");
+		console.log(loginOk);
+		
+		function Building(floorNumber, street, number, city){
+			this.street = street;
+			this.number = number;
+			this.floorNumber = floorNumber;
+			this.city = city;
+			this.elevatorPosition = 0;
+			this.elevatorWorking = true;
+			
+			Building.prototype.getAddress = function(){
+				return this.street + ", " + this.number + " - " + this.city;
+			}
+			
+			Building.prototype.getElevatorData = function(){
+				let text = "";
+				if (this.elevatorWorking == true){
+					text = "Está funcionando";
+				}	
+				else {
+					text = "Está parado";
+				}
+				
+				text += " en la planta " + this.elevatorPosition; 
+				return text;
+			}
+			
+			Building.prototype.callElevator = function(floor){
+				if (this.elevatorWorking == true){
+					this.elevatorPosition = floor;
+				}
+			}
+
+			Building.prototype.elevatorOutOfOder = function(state){
+				this.elevatorWorking = state;
+			}
+		}
+		
+		let bul = new Building(15, "Calle Larios", 5, "Málaga");
+		
+		console.log(bul.getAddress());
+		bul.callElevator(6);
+
+		
+		function Episode(seriesName, season, chapter, title, duration){
+			this.seriesName = seriesName;
+			this.season = season;
+			this.chapter = chapter;
+			this.title = title;
+			this.title = title;
+			this.duration = duration;
+			
+			Episode.prototype.getSeriesName = function(){
+				return this.seriesName;
+			}
+			
+			Episode.prototype.getSeason = function(){
+				return this.season;
+			}
+			
+			Episode.prototype.getChapter = function(){
+				return this.chapter;
+			}
+			
+			Episode.prototype.getTitle = function(){
+				return this.title;
+			}
+			
+			Episode.prototype.getDuration = function(){
+				return this.duration;
+			}
+			
+		}
+		
+		function Netflix(username, password){
+			this.username = username;
+			this.password = password;
+			this.episodeList = new Array();
+			
+			Netflix.prototype.login = function (user, pass){
+				let loginOk = false;
+				
+				if (this.username == user && this.password == pass){
+					loginOK = true;
+				}
+				
+				return loginOk;
+			}
+			
+			Netflix.getUsername = function (){
+				return this.username;
+			}
+		}
+		
+		let ep1 = new Episode("BLack Mirror", 5, 1, "Bandersnatch", "68");
+		
+		console.log(ep1.getSeriesName() + " -  S" + ep1.getSeason() + "E" + 
+			ep1.getChapter() + ": " + ep1.getTitle());
+			
+		let ep2 = new Episode("Malcolm In the Middle", 3, 8, "Reese hace algo", "27");
+
+		console.log(ep2.getSeriesName() + " -  S" + ep2.getSeason() + "E" + 
+			ep2.getChapter() + ": " + ep2.getTitle());
+		
+		let ep3 = new Episode("The Wire", 4, 8, "Black People doing things", "70");
+		
+		console.log(ep3.getSeriesName() + " -  S" + ep3.getSeason() + "E" + 
+			ep3.getChapter() + ": " + ep3.getTitle());
+			
+			
+		let netflixFran = new Netflix("Singi22", "ilovemechas");
+		console.log(netflixFran);
+		console.log(ep1);
+		
+		let loginResult = netflixFran.login("Singi22", "ilovemechas");
+		console.log(loginResult);
+		
+		if (loginResult == true){
+			console.log("Bienvenido " + netflixFran.getUsername());
+		}
+		else {
+			console.log("Username o pass incorrectos");
+		}
+		
+		//clase disco, con un array de canciones, un titulo y una duracion total
+		//añadir cancion 
+		//obtener titulo del disco
+		
+		function Disc(title){
+			this.title = title;
+			this.songs = new Array();
+			this.duration = this.songs.length * 3;
+			
+			Disc.prototype.getTitle = function(){
+				return this.title;
+			}
+			
+			Disc.prototype.addSong = function(song){
+				this.songs.push(song);
+				this.duration = this.songs.length * 3;
+
+			}
+			
+			Disc.prototype.getSongs = function(){
+				return this.songs;
+			}
+			
+			Disc.prototype.getDuration = function(){
+				return this.duration + " min";
+			}
+		}
+		
+		let disco1 = new Disc("Ziggy Sardust");
+		console.log(disco1);
+		console.log(disco1.getTitle());
+		console.log(disco1.getDuration());
+		
+		disco1.addSong("Five Years");
+		console.log(disco1.getSongs());
+		console.log(disco1.getDuration());
+		
+		let canciones = new Array("Soul Love", "Moonage Daydream", "Starman", "It Ain't Easy",
+			"Ziggy Stardust");
+		for (let cancion of canciones){
+			disco1.addSong(cancion);
+		}
+		console.log(disco1.getSongs());
+		console.log(disco1.getDuration());
+		
+		function Book(title, author, pages){
+			this.title = title;
+			this.author = author;
+			this.pages = pages;
+			this.currentPage = 0;
+			
+			Book.prototype.readPage = function(){
+				this.currentPage++;
+				if (this.currentPage >= this.pages){
+					this.currentPage = this.pages;
+					console.log("Ya me lo he leído");
+				}
+			}
+			
+			Book.prototype.getAuthor = function(){
+				return this.author;
+			}
+			
+			Book.prototype.getTitle = function(){
+				return this.title;
+			}
+		}
+		
+		let libro1 = new Book("El Quijote", "Cervantes", 10);
+		console.log(libro1);
+		
+		libro1.readPage();
+		
+		console.log(libro1);
+		
+		libro1.readPage();
+		libro1.readPage();
+		libro1.readPage();
+		libro1.readPage();
+		libro1.readPage();
+		libro1.readPage();
+		libro1.readPage();
+		libro1.readPage();
+		libro1.readPage();
+		libro1.readPage();
+		
+		console.log(libro1);
+
+		
+		
+	</script>		
+</head>
+<body>
+¡Hola mundo!
+</body>
+</html>
+
+
+
