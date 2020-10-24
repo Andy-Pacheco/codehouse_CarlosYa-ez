@@ -1,0 +1,176 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+<head>
+	<script>
+	
+			/**//**//**//**//**//**//**/ console.log("Ejercicio 1:") ///////////////
+			
+			function Estudiante(nombre, edad, estadoCivil){
+				this.nombre = nombre;
+				this.edad = edad;
+				this.estadoCivil = estadoCivil;
+			}
+
+			let personaje1 = new Estudiante("Luis Vargas",21,"soltero");
+			console.log(personaje1);
+			
+			
+			/**//**//**/console.log("");console.log("Ejercicio 2:") ////////////////
+			
+			function Book(title, author){
+				this.title = title;
+				this.author = author;
+				
+				Book.prototype.getTitle = function(){
+					return this.title;
+				}
+				
+				Book.prototype.getAuthor = function(){
+					return this.author;
+				}
+			}
+			
+			let libro1 = new Book("The road ahead", "Bill Gates");
+			let libro2 = new Book("Walter Isaacson", "Steve Jobs");
+			let libro3 = new Book("Mockingjay: the Final Book of the Hunger Games",
+								"Suzanne Collins");
+								
+			console.log("Libro 1:");
+			console.log("autor: " + libro1.getAuthor());
+			console.log("título: " + libro1.getTitle());
+			console.log("Libro 2:");
+			console.log("autor: " + libro2.getAuthor());
+			console.log("título: " + libro2.getTitle());
+			console.log("Libro 3:");		
+			console.log("autor: " + libro3.getAuthor());
+			console.log("título: " + libro3.getTitle());
+			
+			/**//**//**/console.log("");console.log("Ejercicio 3:") ////////////////
+			
+			function Movie(title, director, year, genre){
+				this.title = title;
+				this.director = director;
+				this.year = year;
+				this.genre = genre;
+				this.borrowed = false;
+				
+				Movie.prototype.changeYear = function(year){
+					this.year = year;
+				}
+				
+				Movie.prototype.changeBorrow = function(){
+					this.borrowed = !this.borrowed;
+				}
+				
+				Movie.prototype.getInfo = function(){
+					return "título: " + this.title + "; director: " + this.director +
+							"; año: " + this.year + "; prestado: " + this.borrowed;
+				}
+			}
+			
+			let peli1 = new Movie("Vente a Alemania, Pepe", "Pedro Lazaga", "1970", "Comedy");
+			peli1.changeYear("1971");
+			peli1.changeBorrow();
+			console.log(peli1.getInfo());
+			
+			
+			/**//**//**/console.log("");console.log("Ejercicio 4:") ////////////////
+		
+			function Speakers(encendido, volumen){
+				this.on = encendido;
+				this.volume = volumen;
+				
+				Speakers.prototype.switchOn = function(){
+					this.on = true;
+					this.volume = 20;
+				}
+				
+				Speakers.prototype.switchOff = function(){
+					this.on = false;
+					this.volume = 0;
+				}
+				
+				Speakers.prototype.getVolume = function(){
+					return this.volume;
+				}
+				
+				Speakers.prototype.volumeUp = function(){
+					if (this.volume < 100){
+						this.volume++;
+					}
+				}
+				
+				Speakers.prototype.volumeDown = function(){
+					if (this.volume > 0){
+						this.volume -= 1;
+					}
+				}
+				
+				Speakers.prototype.setVolume = function(number){
+					if (number >= 0 && number <= 100){
+						this.volume = number;
+					}
+					else {
+						console.log("Not a valid volume, enter volume between " +
+									+ "0 and 100");
+					}
+				}
+				
+				Speakers.prototype.mute = function(){
+					this.volume = 0;
+				}
+				
+				Speakers.prototype.print = function(){
+					let text = "";
+					if (this.on){
+						text = "encendido";
+					}
+					else {
+						text = "apagado";
+					}
+					
+					console.log ("El altavoz está " + text + " y su volumen es de " +
+									+ this.volume + ".");
+				}
+			}
+			
+			let altavozFrontal = new Speakers(true, 50);
+			let altavozLateralIzquierdo = new Speakers(true, 20);
+			let altavozLateralDerecho = new Speakers(true, 30);
+			let altavozTraseroIzquierdo = new Speakers(true, 10);
+			let altavozTraseroDerecho = new Speakers(false, 0);
+			
+			altavozFrontal.print();
+			altavozLateralIzquierdo.print();
+			altavozLateralDerecho.print();
+			altavozTraseroIzquierdo.print();
+			altavozTraseroDerecho.print();
+			
+			altavozLateralIzquierdo.volumeUp();
+			altavozLateralIzquierdo.volumeUp();
+			altavozLateralIzquierdo.volumeUp();
+			altavozLateralIzquierdo.volumeUp();
+			altavozLateralIzquierdo.volumeUp();
+			
+			altavozTraseroDerecho.switchOn();
+			altavozTraseroDerecho.setVolume(35);
+			
+			altavozFrontal.switchOff();
+			altavozLateralIzquierdo.switchOff();
+			altavozLateralDerecho.switchOff();
+			altavozTraseroIzquierdo.switchOff();
+			altavozTraseroDerecho.switchOff();
+			
+			console.log(altavozFrontal);
+			console.log(altavozLateralIzquierdo);
+			console.log(altavozLateralDerecho);
+			console.log(altavozTraseroIzquierdo);
+			console.log(altavozTraseroDerecho);
+		
+		
+	</script>		
+</head>
+<body>
+¡Hola mundo!
+</body>
+</html>
