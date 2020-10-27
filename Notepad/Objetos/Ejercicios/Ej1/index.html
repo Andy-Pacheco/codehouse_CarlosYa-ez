@@ -1,0 +1,50 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+<head>
+	<script type="text/javascript"  src="./js/clases/Estudiante.js" charset="UTF-8"></script>
+	<script>
+	
+		let estudiante1 = new Estudiante("Lui Vargas", 21, "Soltero", 8);
+		
+		console.log(estudiante1.getNombre());
+		console.log(estudiante1.getEdad());
+		console.log(estudiante1.getEstadoCivil());
+		
+		estudiante1.setNombre("Mariano Perez");
+		estudiante1.setEstadoCivil("casado");
+		
+		console.log(estudiante1.getNombre());
+		console.log(estudiante1.getEstadoCivil());
+		
+		console.log(estudiante1);
+		
+		let estudiante2 = new Estudiante("Luisa Dominguez", 28, "soltera", 9);
+		
+		console.log(estudiante2.getNombre());
+		console.log(estudiante2.getEdad());
+		console.log(estudiante2.getEstadoCivil());
+		
+		estudiante2.setEstadoCivil("casada");
+		
+		console.log(estudiante2.getEstadoCivil());
+		
+		let estudiante3 = new Estudiante("Pedro Marquez", 22, "casado", 7);
+		
+		estudiante3.setEdad(25);
+		
+		console.log(estudiante3.getEdad());
+		
+		let matriculados = new Array(estudiante1, estudiante2, estudiante3);
+		
+		for (let i = 0; i < matriculados.length; i++){
+			console.log(matriculados[i].getNombre() + " - " + matriculados[i].getEdad());
+			console.log(matriculados[i].getNotaMedia());
+		}
+		
+	
+	
+	</script>		
+</head>
+<body>
+</body>
+</html>

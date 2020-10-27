@@ -1,0 +1,38 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+<head>
+	<script type="text/javascript"  src="./js/clases/Account.js" charset="UTF-8"></script>
+	<script type="text/javascript"  src="./js/clases/Person.js" charset="UTF-8"></script>
+	<script>
+	
+	let pepito = new Person("0454536534w");
+	let cuenta1 = new Account(12345, 0);
+	let cuenta2 = new Account(54321, 700);
+	
+	console.log(pepito);
+	console.log(cuenta1);
+	console.log(cuenta2);
+	
+	pepito.addAccount(cuenta1);
+	
+	console.log(pepito);
+
+	pepito.addAccount(cuenta2);
+	
+	cuenta1.deposit(1100);
+	cuenta2.withdraw(750);
+	
+	console.log(pepito.getMoroso());
+
+	let transferencia1 = 100;
+	cuenta1.withdraw(transferencia1);
+	cuenta2.deposit(transferencia1);
+	
+	console.log(pepito.getMoroso());
+
+	
+	</script>		
+</head>
+<body>
+</body>
+</html>

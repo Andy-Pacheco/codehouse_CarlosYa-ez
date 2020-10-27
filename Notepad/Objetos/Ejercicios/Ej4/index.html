@@ -1,0 +1,57 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+<head>
+	<script type="text/javascript"  src="./js/clases/LoudSpeaker.js" charset="UTF-8"></script>
+	<script>
+	
+	let aF = new LoudSpeaker();
+	let aLI = new LoudSpeaker();
+	let aLD = new LoudSpeaker();
+	let aTI = new LoudSpeaker();
+	let aTD = new LoudSpeaker();
+	
+	aF.turnOn();
+	aF.setVolume(50);
+	
+	aLI.turnOn();
+	
+	aLD.turnOn();
+	aLD.setVolume(30);
+	
+	aTI.turnOn();
+	aTI.setVolume(10);
+	
+	let altavoces = [aF, aLI, aLD, aTI, aTD];
+
+	for (let altavoz of altavoces){
+		console.log(altavoz.print());
+	}
+	
+	for (let i = 0; i < 5; i++){
+		aLI.turnUpVolume();
+	}
+	
+	for (let altavoz of altavoces){
+		console.log(altavoz.print());
+	}
+
+	aTD.turnOn();
+	aTD.setVolume(35);
+	
+	for (let altavoz of altavoces){
+		console.log(altavoz.print());
+	}
+	
+	for (let altavoz of altavoces){
+		altavoz.turnOff();
+	}
+	
+	for (let altavoz of altavoces){
+		console.log(altavoz.print());
+	}
+
+	</script>		
+</head>
+<body>
+</body>
+</html>

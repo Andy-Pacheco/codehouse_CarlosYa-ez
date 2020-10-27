@@ -1,0 +1,34 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+<head>
+	<script type="text/javascript"  src="./js/clases/Movie.js" charset="UTF-8"></script>
+	<script>
+	
+	let p1 = new Movie("E.T.", "Spielberg", 1986, Movie.CATEGORY_DRAMA);
+	
+	console.log(p1.showMovieInfo());
+	
+	let p2 = new Movie("Kill Bill", "Tarantino", 2004, Movie.CATEGORY_ACTION);
+	
+	console.log(p2.showMovieInfo());
+	
+	p2.borrowMovie();
+	
+	console.log(p2.isBorrowed());
+	
+	p2.returnMovie();
+	
+	console.log(p2.isBorrowed());
+	
+	</script>		
+</head>
+<body>
+	<select>
+		<option value=1>Drama</option>
+		<option value=2>Comedy</option>
+		<option value=3>Action</option>
+		<option value=4>Indie</option>
+		<option value=5>Terror</option>
+	</select>
+</body>
+</html>

@@ -277,8 +277,91 @@
 		
 		console.log(libro1);
 
-		
-		
+		function CocaColaMachine (numeroCocaCola, numeroFantas, numeroAguas, numeroAquarius){
+			this.numeroCocaColas = numeroCocaCola;
+			this.numeroFantas = numeroFantas;
+			this.numeroAquarius = numeroAquarius;
+			this.numeroAguas = numeroAguas;
+			this.cambioDisponible = 20; //€
+			this.cantidadInsertadaUsuario = 0;
+			this.encendido = false;
+			
+			CocaColaMachine.prototype.encender = function(){
+				this.encendido = true;
+			}
+
+			CocaColaMachine.prototype.apagar = function(){
+				this.encendido = false;
+			}
+			
+			CocaColaMachine.prototype.insertarDinero = function(dinero){
+				if (this.encendido){
+					this.cantidadInsertadaUsuario += dinero;
+				}
+			}
+			
+			CocaColaMachine.prototype.darCocaCola = function(){
+				this.darRefresco(this.numeroCocaColas, CocaColaMachine.PRECIO_COCA_COLA, "Coke");
+			}
+			
+			CocaColaMachine.prototype.darFanta = function(){
+				this.darRefresco(this.numeroFantas, CocaColaMachine.PRECIO_FANTA, "Fanta");
+			}
+			
+			CocaColaMachine.prototype.darAgua = function(){
+				this.darRefresco(this.numeroAguas, CocaColaMachine.PRECIO_AGUA, "Agua");
+			}
+			
+			CocaColaMachine.prototype.darRefresco = function(numeroRefrescos, precio, nombre){
+				if (this.encendido){
+					if (this.cantidadInsertadaUsuario >= precio){
+						if(numeroRefrescos > 0){
+							this.numeroRefrescos--;
+							this.darCambio(precio);
+							this.cambioDisponible += precio;
+							console.log("End " + nombre + " ok");
+						}
+						else {
+							console.log("NO " + nombre);
+						}
+					}
+					else {
+						let left = precio - this.cantidadInsertadaUsuario;
+						console.log("INSERT COIN " + left);
+					}
+				}
+			}
+			
+			
+			CocaColaMachine.prototype.darCambio = function(precioRefresco){
+				let cambio = this.cantidadInsertadaUsuario - precioRefresco;
+				console.log("Return " + cambio);
+				this.cantidadInsertadaUsuario = 0;
+			}
+			
+			CocaColaMachine.prototype.devolverDinero = function(){
+				console.log("Return " + this.cantidadInsertadaUsuario);
+				this.cantidadInsertadaUsuario = 0;
+			}
+		}
+			
+
+			
+		CocaColaMachine.PRECIO_COCA_COLA = 2;
+		CocaColaMachine.PRECIO_AGUA = 1.5;
+		CocaColaMachine.PRECIO_FANTA = 2.5;
+		CocaColaMachine.PRECIO_AQUARIUS = 3;
+	
+		let maquinaCocaColaGimnasio = new CocaColaMachine(20, 10, 8, 10);
+		maquinaCocaColaGimnasio.encender();
+		maquinaCocaColaGimnasio.insertarDinero(1);
+		maquinaCocaColaGimnasio.devolverDinero();
+		maquinaCocaColaGimnasio.insertarDinero(1);
+		maquinaCocaColaGimnasio.insertarDinero(0.5);
+		maquinaCocaColaGimnasio.insertarDinero(1.5);
+		maquinaCocaColaGimnasio.darAgua();
+			
+			
 	</script>		
 </head>
 <body>
