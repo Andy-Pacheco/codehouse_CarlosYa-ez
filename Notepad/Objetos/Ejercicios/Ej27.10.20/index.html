@@ -1,0 +1,56 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+<head>
+	<script type="text/javascript"  src="./js/clases/Song.js" charset="UTF-8"></script>
+	<script type="text/javascript"  src="./js/clases/Playlist.js" charset="UTF-8"></script>
+	<script>
+	
+	let song1 = new Song("Give a little bit", "Supertramp", 248, 5);
+	let song2 = new Song("The logical Song", "Supertramp", 251, 5);
+	let song3 = new Song("Breakfast in America", "Supertramp", 159, 5);
+	let song4 = new Song("", "", 159, 5);
+	let song5 = new Song("Losing My Religion", "R.E.M.", 268, 5);
+	let song6 = new Song("Everybody Hurts", "R.E.M.", 320, 5);
+	let song7 = new Song("Brilliant Disguise", "Bruce Springsteen", 254, 5);
+	let song8 = new Song("It's the end of the world...", "R.E.M.", 246, 5);
+	let song9 = new Song("Man On The Moon", "R.E.M.", 314, 5);
+	let song10 = new Song("Summer of '69", "Bryan Adams", 216, 5);
+	let song11 = new Song("Heaven", "Bryan Adams", 243, 5);
+	let song12 = new Song("The Man Who Sold The World", "David Bowie", 241, 5);
+	let song13 = new Song("Get it on", "T. Rex", 314, 5);
+	let song14 = new Song("20th Century Boys", "T. Rex", 314, 5);
+	
+	//console.log(song1);
+	//console.log(song1.print());
+	//console.log(song1.getDuration());
+	//console.log(song1.getGroup());
+	let lista1 = new Playlist();
+	let canciones = [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14];
+	//console.log(canciones);
+	
+	for (cancion of canciones){
+		lista1.addSong(cancion);
+	}
+	
+	//console.log(lista1);
+	lista1.removeSong(song4); //??? hace el remove antes de el anterior print
+	//console.log(lista1);
+	
+	console.log(lista1.nextSong());
+	console.log(lista1.nextSong());
+	console.log(lista1.nextSong());
+	console.log(lista1.shuffle());
+	lista1.unShuffle();
+	lista1.shuffle();
+	//console.log(lista1);
+	
+	console.log(lista1.topGroups());
+	console.log(lista1.orderByDuration());
+	
+
+	
+	</script>		
+</head>
+<body>
+</body>
+</html>
