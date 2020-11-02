@@ -16,5 +16,9 @@ function Song(title, group, duration, rating){
 	Song.prototype.getGroup = function(){
 		return this.group;
 	}
+	
+	Song.prototype.getRating = function(){
+		return this.rating;
+	}
 }
 

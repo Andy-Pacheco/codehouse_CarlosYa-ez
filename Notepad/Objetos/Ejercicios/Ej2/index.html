@@ -4,15 +4,36 @@
 	<script type="text/javascript"  src="./js/clases/Book.js" charset="UTF-8"></script>
 	<script>
 	
-	let book1 = new Book("The road ahead", "Bill Gates");
-	let book2 = new Book("Steve Jobs", "Water Isaacson");
-	let book3 = new Book("The Hunger Games", "Suzanne Collins");
+	let book1 = new Book(null, "The road ahead", "Bill Gates");
+	let book2 = new Book(null, "Steve Jobs", "Water Isaacson");
+	let book3 = new Book(null, "The Hunger Games", "Suzanne Collins");
 	
 	let books = [book1, book2, book3];
 	
 	for (let i = 0; i < books.length; i++){
 		console.log(books[i].getTitle() + " - " + books[i].getAuthor());
 	}
+	
+	console.log(book1);
+	let jBook1 = book1.toJSONObject();
+	console.log(jBook1);
+	
+	let jBookText = JSON.stringify(jBook1);
+	console.log(jBookText);
+	
+	console.log("mensaje recibido: " + jBookText);
+
+	let jBookRecreado = JSON.parse(jBookText);
+	console.log(jBookRecreado);
+		
+	let bookRecreado = new Book(jBookRecreado);
+	console.log(bookRecreado);
+
+	//TODO: enviar por internet a alguien
+	
+	//se recibe el mensaje
+	
+	
 	
 	
 	</script>		

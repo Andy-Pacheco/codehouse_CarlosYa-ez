@@ -1,6 +1,13 @@
-function Book(title, author){
-	this.title = title;
-	this.author = author;
+function Book(jBook, title, author){
+	
+	if(jBook == null){
+		this.title = title;
+		this.author = author;
+	}
+	else {
+		this.title = jBook.title;
+		this.author = jBook.author;
+	}
 	
 	Book.prototype.getTitle = function(){
 		return this.title;
@@ -16,5 +23,14 @@ function Book(title, author){
 	
 	Book.prototype.setAuthor = function(author){
 		this.author = author;
+	}
+	
+	Book.prototype.toJSONObject = function(author){
+		let jBook = {};
+		
+		jBook.title = this.title;
+		jBook.author = this.author;
+		
+		return jBook;
 	}
 }

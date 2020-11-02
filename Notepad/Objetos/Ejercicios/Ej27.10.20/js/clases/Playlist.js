@@ -108,8 +108,32 @@ function Playlist(){
 		return durations;
 	}
 		
-			
-
+	Playlist.prototype.sortBySongGroup = function(){
+		this.songs.sort(
+			function (a, b){
+				let x = a.getGroup().toLowerCase();
+				let y = b.getGroup().toLowerCase();
+				
+				let res = 0;
+				if (x > y){
+					res = 1;
+				}
+				else if (x < y){
+					res = -1;
+				}
+				
+				return res;
+			}
+		)
+	}
+	
+	Playlist.prototype.sortByRating = function(){
+		this.songs.sort(
+			function (a, b){
+				return b.getRating() - a.getRating();
+			}
+		);
+	}
 				
 }
 		

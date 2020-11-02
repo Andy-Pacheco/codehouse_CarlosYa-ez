@@ -1,0 +1,51 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+	<head>
+		<script type="text/javascript"  src="./js/classes/Film.js" charset="UTF-8"></script>
+		<script>
+		
+			let p1 = new Film(null, "E.T.", "Spielberg", 1986, Film.CATEGORY_DRAMA);
+			
+			console.log(p1.showFilmInfo());
+			
+			let p2 = new Film(null, "Kill Bill", "Tarantino", 2004, Film.CATEGORY_ACTION);
+			
+			console.log(p2.showFilmInfo());
+
+
+			p2.borrowFilm();
+			
+			console.log(p2.isBorrowed());
+			
+			p2.returnFilm();
+
+			console.log(p2.isBorrowed());
+			
+			console.log(p1);
+			let jFilm1 = p1.toJSONObject();
+			console.log(jFilm1);
+	
+			let jFilmText = JSON.stringify(jFilm1);
+			console.log(jFilmText);
+			
+			console.log("mensaje recibido: " + jFilmText);
+
+			let jFilmRecreado = JSON.parse(jFilmText);
+			console.log(jFilmRecreado);
+			
+			let filmRecreado = new Film(jFilmRecreado);
+			console.log(filmRecreado);
+			
+		</script>		
+	</head>
+	<body>
+		<input type=text placeholder = "Titulo de la pelicula" id="title" />
+		<select>			
+			<option value=1>Drama</option>
+			<option value=2>Comedy</option>
+			<option value=3>Action</option>
+			<option value=4>Indie</option>
+			<option value=5>Terror</option>
+		</select>
+	</body>
+</html>
