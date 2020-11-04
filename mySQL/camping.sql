@@ -106,12 +106,11 @@ DELETE FROM activity WHERE activity_id = 0001;
 
 SELECT name FROM activity;
 
-SELECT camper_id FROM camper WHERE EXISTS (SELECT camper_ID FROM kid_activity WHERE camper.camper_id = kid_activity.camper_id); -- ???? mal
+SELECT DISTINCT camper.name FROM camper INNER JOIN kid_activity ON kid_activity.camper_id=camper.camper_id;
 
 SELECT COUNT(*) FROM kid_activity;
 
-SELECT name FROM camper, name FROM activity WHERE EXISTS (SELECT * FROM kid_activity); -- ???? mal
+SELECT DISTINCT activity.name FROM activity INNER JOIN kid_activity ON kid_activity.activity_id=activity.activity_id; 
 
--- 14 ?????? Igual que el 11... 
-
+SELECT activity.name,camper.name FROM activity,camper INNER JOIN kid_activity ON kid_activity.activity_id=activity.activity_id;
 
