@@ -1,0 +1,56 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+<head>
+	<script type="text/javascript"  src="./js/clases/Episode.js" charset="UTF-8"></script>
+	<script type="text/javascript"  src="./js/clases/Netflix.js" charset="UTF-8"></script>
+	<script>
+	
+	let epi1 = new Episode(null, "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis");
+	
+	console.log(epi1);
+	
+	console.log(epi1.name);
+	console.log(epi1.series);
+	console.log(epi1.season);
+	console.log(epi1.position);
+	console.log(epi1.genre);
+	console.log(epi1.duration);
+	
+	epi1.name = "Hola, ";
+	epi1.series = "¿qué";
+	epi1.season = "tal";
+	epi1.position = "estás?";
+	epi1.genre = ", yo";
+	epi1.duration = "bien.";
+	
+	console.log(epi1.name);
+	console.log(epi1.series);
+	console.log(epi1.season);
+	console.log(epi1.position);
+	console.log(epi1.genre);
+	console.log(epi1.duration);
+	
+	let jEpi1 = epi1.toJSONObject();
+	
+	console.log(jEpi1);
+	
+	let jEpi1Text = JSON.stringify(jEpi1);
+	console.log(jEpi1Text);
+	
+	let jEpi1Recreado = JSON.parse(jEpi1Text);
+	console.log(jEpi1Recreado);
+	
+	epi1Recreado = new Episode(jEpi1Recreado);
+	console.log(epi1Recreado);
+	
+	let nesflis1 = new Netflix(null, "userfalso123", "1234", [epi1]);
+	console.log(nesflis1);
+	
+	nesflis1.play();
+	console.log(nesflis1.lastWatched);
+	
+	</script>		
+</head>
+<body>
+</body>
+</html>

@@ -30,8 +30,9 @@ CREATE TABLE kid_activity(
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     observation VARCHAR(500),
+    -- falta linea de relacion para el borrado
     PRIMARY KEY(camper_id, activity_id),
-    CONSTRAINT fk_camper_1 FOREIGN KEY (camper_id) REFERENCES camper(camper_id),
+    CONSTRAINT fk_camper_1 FOREIGN KEY (camper_id) REFERENCES camper(camper_id), -- ON DELETE NO ACTION ON UPDATE CASCADE
     CONSTRAINT fk_activity_1 FOREIGN KEY (activity_id) REFERENCES activity(activity_id)
 );
 
@@ -89,7 +90,7 @@ SELECT name FROM activity WHERE min_age < 8;
 
 UPDATE activity SET min_age = min_age + 1;
 
-SELECT name, yob FROM camper WHERE yob >= 2007 ORDER BY yob;
+SELECT name, yob FROM camper WHERE yob > 2007 ORDER BY yob;
 
 SELECT name, dni, yob, phone FROM camper WHERE yoi < 2015 ORDER BY name;
 
