@@ -1,10 +1,10 @@
 class Episode{
-	constructor(jEpisode, name, series, season, position, genre, duration){
+	constructor(jEpisode, name, series, season, chapter, genre, duration){
 		if(jEpisode == null){
 			this._name = name;
 			this._series = series;
 			this._season = season;
-			this._position = position;
+			this._chapter = chapter;
 			this._genre = genre;
 			this._duration = duration;
 		}
@@ -12,7 +12,7 @@ class Episode{
 			this._name = jEpisode.name;
 			this._series = jEpisode.series;
 			this._season = jEpisode.season;
-			this._position = jEpisode.position;
+			this._chapter = jEpisode.chapter;
 			this._genre = jEpisode.genre;
 			this._duration = jEpisode.duration;
 		}
@@ -30,8 +30,12 @@ class Episode{
 		return this._season;
 	}
 	
-	get position() {
-		return this._position;
+	get chapter() {
+		return this._chapter;
+	}
+	
+	getPosition() {
+		return "S" + this._season + "E" + this._chapter;
 	}
 	
 	get genre() {
@@ -54,8 +58,8 @@ class Episode{
 		this._season = season;
 	}
 	
-	set position(position) {
-		this._position = position;
+	set chapter(chapter) {
+		this._chapter = chapter;
 	}
 	
 	set genre(genre) {
@@ -71,7 +75,7 @@ class Episode{
 		jEpisode.name = this._name;
 		jEpisode.series = this._series;
 		jEpisode.season = this._season;
-		jEpisode.position = this._position;
+		jEpisode.chapter = this._chapter;
 		jEpisode.genre = this._genre;
 		jEpisode.duration = this._duration;
 		

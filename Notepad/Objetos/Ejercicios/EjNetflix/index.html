@@ -5,31 +5,20 @@
 	<script type="text/javascript"  src="./js/clases/Netflix.js" charset="UTF-8"></script>
 	<script>
 	
-	let epi1 = new Episode(null, "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis");
+	let epi1 = new Episode(null, "Objetos", "Las aventuras de Javascript", "03", "08", "Terror", 200);
+	let epi2 = new Episode(null, "Bootstrap", "Las aventuras de CSS", "01", "02", "Terror", 600);
+	let epi3 = new Episode(null, "No useis JOIN", "Las aventuras de BBDD", "05", "01", "Terror", 140);
 	
 	console.log(epi1);
 	
 	console.log(epi1.name);
 	console.log(epi1.series);
 	console.log(epi1.season);
-	console.log(epi1.position);
+	console.log(epi1.chapter);
+	console.log(epi1.getPosition());
 	console.log(epi1.genre);
 	console.log(epi1.duration);
-	
-	epi1.name = "Hola, ";
-	epi1.series = "¿qué";
-	epi1.season = "tal";
-	epi1.position = "estás?";
-	epi1.genre = ", yo";
-	epi1.duration = "bien.";
-	
-	console.log(epi1.name);
-	console.log(epi1.series);
-	console.log(epi1.season);
-	console.log(epi1.position);
-	console.log(epi1.genre);
-	console.log(epi1.duration);
-	
+
 	let jEpi1 = epi1.toJSONObject();
 	
 	console.log(jEpi1);
@@ -46,8 +35,32 @@
 	let nesflis1 = new Netflix(null, "userfalso123", "1234", [epi1]);
 	console.log(nesflis1);
 	
-	nesflis1.play();
+	nesflis1.addEpisode(epi2);
+	nesflis1.addEpisode(epi3);
+	
+	console.log(nesflis1.episodes);
+	
 	console.log(nesflis1.lastWatched);
+	
+	nesflis1.play();
+	
+	console.log(nesflis1.lastWatched);	
+	
+	nesflis1.play();
+	
+	console.log(nesflis1.lastWatched);
+	
+	nesflis1.play();
+	
+	console.log(nesflis1.lastWatched);
+	
+	nesflis1.play();
+	
+	console.log(nesflis1.lastWatched);
+	
+	console.log(nesflis1.duration);
+	
+	console.log(nesflis1.orderByDuration());
 	
 	</script>		
 </head>
