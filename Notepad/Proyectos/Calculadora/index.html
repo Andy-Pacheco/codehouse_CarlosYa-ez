@@ -3,37 +3,55 @@
 	<head>
 		<script type="text/javascript"  src="./js/calculator.js" charset="UTF-8"></script>
 		<script>
-		
-			
-		
 		</script>	
-		
+		<link rel="stylesheet" href="./css/style.css">
 			
 	</head>
-	<body>
-	
-		<input type=text id="pantalla" readonly/>
-		<br/>
-		<input type=button value="1" onclick="addValue('1')"/>
-		<input type=button value="2" onclick="addValue('2')"/>
-		<input type=button value="3" onclick="addValue('3')"/>
-		<input type=button value="+" onclick="addValue('+')"/>
-		<br/>
-		<input type=button value="4" onclick="addValue('4')"/>
-		<input type=button value="5" onclick="addValue('5')"/>
-		<input type=button value="6" onclick="addValue('6')"/>
-		<input type=button value="-" onclick="addValue('-')"/>
-		<br/>
-		<input type=button value="7" onclick="addValue('7')"/>
-		<input type=button value="8" onclick="addValue('8')"/>
-		<input type=button value="9" onclick="addValue('9')"/>
-		<input type=button value="*" onclick="addValue('*')"/>
-		<br/>
-		<input type=button value="0" onclick="addValue('4')"/>
-		<input type=button value="C" onclick="clearScreen()"/>
-		<input type=button value="=" onclick="operate()"/>
-		<input type=button value="/" onclick="addValue('/')"/>
-		
+	<body class="bg-purple">
+		<div class="container">
+			<div class="calculator">
+					
+					<div class="text">
+						<h2>CASIO</h2>
+						<p>fx-82MS</p>
+					</div>
+					<div class="text-rojo">
+						<p>S-V.P.A.M.</p>
+					</div>
+				<div class="pantalla">
+					<input type=text id="pantalla" readonly/>
+				</div>
+				<div class="buttons">
+					<div class="off">
+						<input type=button class="rojo" value="OFF" onclick="turnOff()"/>
+					</div>
+					<div class="row">
+						<input type=button class="azul" value="7" onclick="addValue('7')"/>
+						<input type=button class="azul" value="8" onclick="addValue('8')"/>
+						<input type=button class="azul" value="9" onclick="addValue('9')"/>
+						<input type=button class="gris" value="/" onclick="addValue('/')"/>
+					</div>
+					<div class="row">
+						<input type=button class="azul" value="4" onclick="addValue('4')"/>
+						<input type=button class="azul" value="5" onclick="addValue('5')"/>
+						<input type=button class="azul" value="6" onclick="addValue('6')"/>
+						<input type=button class="gris" value="*" onclick="addValue('*')"/>
+					</div>
+					<div class="row">
+						<input type=button class="azul" value="1" onclick="addValue('1')"/>
+						<input type=button class="azul" value="2" onclick="addValue('2')"/>
+						<input type=button class="azul" value="3" onclick="addValue('3')"/>
+						<input type=button class="gris" value="-" onclick="addValue('-')"/>
+					</div>
+					<div class="row">
+						<input type=button class="azul" value="0" onclick="addValue('0')"/>
+						<input type=button class="rojo" value="C" onclick="clearScreen()"/>
+						<input type=button class="gris" value="=" onclick="operate()"/>
+						<input type=button class="gris" value="+" onclick="addValue('+')"/>
+					</div>
+				</div>
+			</div>	
+		</div>
 		
 	</body>
 </html>

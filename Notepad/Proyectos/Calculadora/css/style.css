@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'digital';
+    src: url('../font/DS-DIGIB.TTF');
+}
+
+@font-face {
+    font-family: 'eurostile';
+    src: url('../font/EurostileBold.ttf');
+}
+
+
+.bg-purple{
+    background-color: rgb(45, 56, 71);
+}
+
+.text {
+    width: 90%;
+    color: #939ab4;
+    font-family: eurostile;
+    letter-spacing: 1.5px;
+}
+
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    background-color:#3a5872 ;
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: 1px 5px 30px black;
+}
+
+.off {
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons{
+    height: 60%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: space-between;
+
+}
+
+.pantalla {
+    height: 15%;
+    width: 90%;
+    text-align: center;
+}
+
+input[type=button]{
+    padding: 12px 20px;
+    font-size: 120%;
+    border-bottom-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-right-radius: 15%;
+    border-top-left-radius: 15%;
+    box-shadow: 1px 1px 0px 1px #0000004d;
+    color: white;
+    border: 1px rgba(0, 0, 0, 0.212) solid;
+}
+
+input[type=button]:active{
+    box-shadow: inset 1px 1px 0px 1px #0000004d;
+}
+
+
+input[type=text]{
+    height: 50px;
+    width: 85%;
+    font-size: 300%;
+    text-align: end;
+    border-radius: 10px;
+    background-color:#4f7165;
+    border: 1px rgba(0, 0, 0, 0.315) solid;
+    font-family: digital;
+    color: rgba(0, 0, 0, 0.562);
+    box-shadow: inset 1px 1px 0px 1px #0000004d;
+
+}
+
+.rojo {
+    background-color: #c86e78;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text p, .text h2{
+    margin-bottom:0;
+}
+
+.text-rojo {
+    color: #c86e78;
+    font-family: eurostile;
+    letter-spacing: 1.5px;
+}
+
+.texto-rojo p{
+    margin: 0;
+}
+
+.azul {
+    background-color: #939ab4;
+}
+
+.gris{
+    background-color: rgb(155, 153, 153);
+}
+
+input[type="text"], input[type="button"] { 
+    outline: none;
+}
