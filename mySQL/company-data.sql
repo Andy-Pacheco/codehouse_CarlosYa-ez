@@ -61,15 +61,22 @@ SELECT name, job, salary FROM employee WHERE address = "Leon";
 -- 5. Seleccionar el nombre, salario y localidad donde trabajande  los empleados que tengan un salario entre 10000 y 13000.
 SELECT name, salary, address FROM employee WHERE salary >= 10000 AND salary <= 13000;
 
--- 6. Visualizar los departamentos con más de 5 empleados.
-SELECT department_id FROM employee WHERE count(department_id) = 5;
+-- 6. Visualizar los departamentos con más de 2 empleados.
+SELECT department.dep_name, count(employee.department_id)
+FROM employee, department
+WHERE employee.department_id = department.department_id
+GROUP BY department.department_id 
+HAVING COUNT(employee.department_id) >= 2;
+
 
 -- 7. Mostrar el nombre, salario y nombre del departamento de losempleados   que   tengan   el   mismo   oficio   que   ‘Leonel   AlfonsoEsquivel’.
 SELECT employee.name, employee.salary, department.dep_name FROM employee, department WHERE employee.department_id = department.department_id 
 AND employee.job = (SELECT job FROM employee WHERE name = "Esquivel Leonel Alfonso");
 
 -- 8. Mostrar el nombre, salario y nombre del departamento de losempleados que tengan el mismo oficio que “Castillo Montes Luis”y   que no tengan comisión.
-SELECT employee.name, employee.salary, department.dep_name FROM employee, department WHERE commission = 0 
+SELECT employee.name, employee.salary, department.dep_name 
+FROM employee, department 
+WHERE commission = 0 
 AND department.department_id = employee.department_id 
 AND job = (SELECT job FROM employee WHERE name = "Castillo Montes Luis");
 
@@ -83,9 +90,9 @@ SELECT name FROM employee WHERE address = "Leon" AND (job = "Analista" OR job = 
 -- 11. Calcula el salario medio de todos los empleados.
 SELECT AVG(salary) FROM employee;
 
--- 12. ¿Cuál   es   el   máximo   salario   de   los   empleados   deldepartamento?
+-- 12. ¿Cuál   es   el   máximo   salario   de   los   empleados   deldepartamento 10?
 SELECT MAX(salary) FROM employee;
-SELECT MAX(salary) FROM employee GROUP BY department_id;
+SELECT MAX(salary) FROM employee WHERE department_id = 10;
 
 -- 13. Calcula el salario mínimo de los empleados del departamento‘VENTAS’
 SELECT MIN(salary) FROM employee WHERE department_id = (SELECT department_id FROM department WHERE dep_name = "Ventas");
@@ -106,7 +113,9 @@ SELECT COUNT(*) FROM employee WHERE commission = 0;
 SELECT name FROM employee WHERE LEFT(name,1) = "A";
 
 -- 19. Visualizar el número de empleados de cada departamento.
-SELECT COUNT(*), department_id FROM employee GROUP BY department_id;
+SELECT COUNT(employee.employee_id), dep_name FROM employee, department
+WHERE department.department_id = employee.department_id
+GROUP BY employee.department_id;
 
 -- 20. Para cada oficio obtener la suma de salarios.
 SELECT SUM(salary), job FROM employee GROUP BY job;
@@ -122,7 +131,8 @@ SELECT name FROM employee WHERE salary = (SELECT MIN(salary) FROM employee);
 
 -- 24. Mostrar los datos del empleado que tiene el salario másalto en el departamento de ‘VENTAS’.
 SELECT * FROM employee WHERE salary = (SELECT MAX(salary) FROM employee WHERE department_id = 
-(SELECT department_id FROM department WHERE dep_name = "Ventas"));
+(SELECT department_id FROM department WHERE dep_name = "Ventas"))
+AND; -- completar atando a que employee esté en ventas 
 
 -- 25. Visualizar el departamento con más empleados.
 SELECT dep_name FROM department WHERE department_id = 
@@ -130,10 +140,16 @@ SELECT dep_name FROM department WHERE department_id =
 
 -- 26. Visualizar   el   número   de   departamento   que   tenga   másempleados cuyo oficio sea empleado.
 SELECT department_id FROM employee WHERE job = "Empleado" GROUP BY department_id 
-ORDER BY COUNT(department_id);
+ORDER BY COUNT(department_id) LIMIT 1;
 
 -- 27. Mostrar   el   número   de   oficios   distintos   de   cadadepartamento.
 SELECT job, department_id FROM employee GROUP BY job, department_id;
 
 -- 28. Mostrar los departamentos que tengan más de dos personastrabajando en la misma profesión.
-SELECT COUNT(job), job, department_id FROM employee GROUP BY job, department_id;
+SELECT job, department.dep_name FROM employee, department  
+WHERE department.department_id = employee.department_id 
+GROUP BY job, department.dep_name 
+HAVING COUNT(job) > 2;
+
+
+SELECT * FROM employee JOIN department ON department.department_id = employee.department_id;
