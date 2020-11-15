@@ -132,4 +132,123 @@ values ('R13', 208, 104, 3, '2005-06-30');
 INSERT INTO rating (rating_code, editor_id, book_code, starrating, rating_date)
 values ('R14', 209, 104, 3, '2005-06-30');
 
+SELECT * FROM book;
+SELECT book_code FROM rating;
 
+SELECT * FROM book WHERE book_code NOT IN (SELECT book_code FROM rating);
+
+SELECT * FROM editor;
+
+SELECT * FROM editor, rating, book 
+WHERE editor.editor_id = rating.editor_id
+AND rating.book_code = book.book_code;
+
+SELECT * FROM editor WHERE editor_id NOT IN (SELECT editor_id FROM rating);
+
+SELECT concat(editor.first_name, " ", editor.last_name) AS name, book.title, rating.starrating
+FROM editor, rating, book 
+WHERE editor.editor_id = rating.editor_id
+AND rating.book_code = book.book_code;
+
+SELECT DISTINCT book.* FROM book, rating 
+WHERE book.book_code = rating.book_code
+AND rating.starrating > 3;
+
+SELECT COUNT(starrating), title FROM rating, book 
+WHERE rating.book_code = book.book_code
+GROUP BY rating.book_code;
+
+SELECT * FROM book JOIN rating ON book.book_code = rating.book_code
+AND book.book_code = "101";
+
+SELECT title, rating.* FROM book JOIN rating ON book.book_code = rating.book_code
+					AND (rating.editor_id = "201"
+						OR rating.editor_id = "203"
+                        OR rating.editor_id = "204");
+                        
+SELECT book.book_code, book.title, rating.rating_date, rating.editor_id
+		FROM book
+        JOIN rating ON rating.starrating > 3
+					AND rating.book_code = book.book_code
+ORDER BY rating.rating_date;
+
+SELECT book.book_code, book.title, rating.rating_date, rating.editor_id
+		FROM rating
+        JOIN book ON rating.book_code = book.book_code
+WHERE starrating > 3
+ORDER BY rating_date;
+
+SELECT book.book_code, book.title, rating.rating_date, rating.editor_id
+		FROM book
+        LEFT JOIN rating ON rating.book_code = book.book_code
+WHERE starrating > 3
+ORDER BY rating_date;
+
+SELECT concat(editor.first_name, " ", editor.last_name) as name, rating.starrating, book.title 
+	FROM editor
+    LEFT JOIN rating ON rating.editor_id = editor.editor_id
+    LEFT JOIN book ON book.book_code = rating.book_code;
+    
+SELECT concat(editor.first_name, " ", editor.last_name) as name, COUNT(rating.editor_id) 
+	FROM editor
+    LEFT JOIN rating ON rating.editor_id = editor.editor_id
+    GROUP BY editor.editor_id;
+
+-- 1
+SELECT concat(editor.first_name, " ", editor.last_name), rating_date FROM editor
+		JOIN rating ON rating.editor_id = editor.editor_id
+        WHERE editor.editor_id = "203"
+        ORDER BY rating_date;
+	
+-- 2
+SELECT title, rating_date, rating.editor_id FROM rating
+		JOIN book ON book.book_code = rating.book_code
+        WHERE rating_date < "2000-01-01";
+        
+-- 3
+SELECT title, rating_date, starrating FROM rating
+	JOIN book ON book.book_code = rating.book_code
+    ORDER BY rating_date;
+    
+-- 4
+SELECT title, concat(editor.first_name, " ", editor.last_name) as name,
+	price, year_written, affiliation FROM book 
+						JOIN rating ON rating.book_code = book.book_code
+                        JOIN editor ON rating.editor_id = editor.editor_id
+	WHERE affiliation LIKE "NY%";
+    
+-- 5
+SELECT AVG(price) FROM book
+				JOIN rating ON rating.book_code = book.book_code
+				JOIN editor ON rating.editor_id = editor.editor_id
+	WHERE affiliation LIKE "NY%";
+
+-- 6
+SELECT title, COUNT(rating.book_code) FROM book
+						JOIN rating on rating.book_code = book.book_code
+		GROUP BY title;
+        
+-- 7
+SELECT DISTINCT title FROM book
+			JOIN rating on rating.book_code = book.book_code
+            JOIN editor on editor.editor_id = rating.editor_id
+WHERE affiliation LIKE "NY%";
+
+-- 8
+SELECT title, CONCAT(first_name, " ", last_name) as author, starrating FROM book
+	LEFT JOIN rating ON rating.book_code = book.book_code;
+    
+-- 9
+SELECT title, CONCAT(book.first_name, " ", book.last_name) as author, starrating, 
+concat(editor.first_name, " ", editor.last_name) as editor_name 
+FROM book
+LEFT JOIN rating ON rating.book_code = book.book_code
+LEFT JOIN editor ON editor.editor_id = rating.editor_id;
+
+-- 10
+
+SELECT title, MAX(starrating) FROM book
+LEFT JOIN rating ON rating.book_code = book.book_code
+GROUP BY title;
+
+	

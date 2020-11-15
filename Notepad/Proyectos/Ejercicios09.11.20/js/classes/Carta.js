@@ -20,6 +20,10 @@ class Carta{
 		return this._deal;
 	}
 	
+	getCarta(){
+		return this._number + " de " + this._suit;
+	}
+	
 	get id(){
 		return this._id;
 	}

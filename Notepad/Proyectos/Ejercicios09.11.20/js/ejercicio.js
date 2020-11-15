@@ -32,9 +32,14 @@ console.log(nombresCortos);
 
 let numeros2 = [2.47895, 3.14159268, 5.699874, 8.574125];
 
-let numerosCut = numeros2.map ((num) => parseFloat(num.toFixed(2)));
+let numerosCut = numeros2.map ((num) => parseFloat(num.toFixed(3)));
 
 console.log(numerosCut);
+
+let values = [8,9,1,2,3];
+
+let valuesSort = values.sort( (a,b) => a - b);
+console.log(valuesSort);
 
 //////////////////////////////////////////////////////////////
 
@@ -64,7 +69,8 @@ console.log(cartas);
 let baraja1 = new Baraja(cartas);
 
 baraja1.shuffle();
-baraja1.sortCards();
+//baraja1.sortCards();
 
-console.log(baraja1.printCards());
+baraja1.verCartas();
+
 
