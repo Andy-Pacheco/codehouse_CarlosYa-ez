@@ -11,7 +11,13 @@ function readProductData(){
 	console.log(color);
 	console.log(amount);
 	
-	let newProduct = new Product(name, price, amount, category, color);
+	let newProduct = {
+		name: name,
+		price: price,
+		amount: amount,
+		category: category,
+		color: color
+	};
 
 	paintProductData(newProduct)
 }

@@ -1,0 +1,81 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+	<head>
+		<script type="text/javascript"  src="./js/productManager.js" charset="UTF-8"></script>
+		<script>
+		
+		
+			var products = [];
+			var editingProductId = null;
+			
+		
+		</script>	
+		
+			
+	</head>
+	<body>
+		<div>
+			<form id="productForm">
+				<span>Nombre</span>
+				<br/>
+				<input type=text id="name" />
+				<br/>
+				<br/>
+				<span>Precio</span>
+				<br/>
+				<input type=text id="price" />
+				<br/>
+				<br/>
+				<span>Cantidad</span>
+				<br/>
+				<input type=number id="amount" />
+				<br/>
+				<br/>
+				<span>Categoria</span>
+				<br/>
+				<select id="category">
+					<option value="1">Papel Higiénico</option>
+					<option value="2">Champú</option>
+					<option value="3">Luffa</option>
+					<option value="4">Gel Ducha</option>
+				</select>
+				<br/>
+				<br/>
+				<span>Color</span>
+				<input type=color id="color" />
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<input type=button value="Enviar" onclick="readProductData();" />
+				
+			</form>
+	
+	
+		</div>
+		<div>
+			<table id="products" border=1>
+				<tr>
+					<td>Nombre</td>
+					<td>Precio</td>
+					<td>Cantidad</td>
+					<td>Categoria</td>
+					<td>Color</td>
+					<td>Opciones</td>
+				</tr>
+				
+			</table>
+		</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+	<head>
+		<script type="text/javascript"  src="./js/classes/Animal.js" charset="UTF-8"></script>
+		<script type="text/javascript"  src="./js/classes/Animales/Oviparo.js" charset="UTF-8"></script>
+		<script type="text/javascript"  src="./js/classes/Animales/Viviparo.js" charset="UTF-8"></script>
+		<script type="text/javascript"  src="./js/classes/Animales/Oviparos/Dragon.js" charset="UTF-8"></script>
+		<script>
+			let animal1 = new Animal("Lupi", "Canis normalus");
+		
+			console.log(animal1.getNombre());
+			console.log(animal1.getEspecie());
+			animal1.darLaPatita();
+			
+			let caponata = new Oviparo("Caponata", "Gallus gallus domesticus", "Rojo-Negro", 2);
+			
+			console.log(caponata.getNombre());
+			console.log(caponata.getEspecie());
+			
+			caponata.ponerHuevos();
+			console.log(caponata.getColorPlumaje());
+		
+			console.log(caponata);
+			caponata.darLaPatita();
+			
+			let turuleca = new Oviparo("Turuleca", "Gallus gallus domesticus", "verde", 3);
+			console.log(turuleca.getNombre());
+			console.log(turuleca.getEspecie());
+			
+			turuleca.ponerHuevos();
+			console.log(turuleca.getColorPlumaje());
+			turuleca.darLaPatita();
+			
+			let wupi = new Viviparo("Wupi", "Ballenatus grandus", 2, 24);
+			console.log(wupi.getNombre());
+			console.log(wupi.getEspecie());
+			
+			wupi.parir();
+			wupi.getPeriodoGestacion();
+			
+			//wupi.ponerHuevos();
+			wupi.darLaPatita();
+			
+			let smaug = new Dragon("Smaug el Terrible", "Draconius Harrypotterus", "Rojo", 1, 8455000);
+			
+			console.log(smaug.toString());
+			console.log(smaug.getNombre());
+			console.log(smaug.getEspecie());
+			smaug.ponerHuevos();
+			console.log(smaug.getColorPlumaje());
+			smaug.acumularOro(1000000);
+			console.log(smaug.getOro());
+			smaug.darLaPatita();
+			
+			console.log(smaug.toString());
+			
+		</script>	
+		
+			
+	</head>
+	<body>
+		
+	
+	
+	
+	
+	
+	
+		
+	</body>
+</html>
