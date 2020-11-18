@@ -1,0 +1,82 @@
+<meta http-equiv="content-type" content="text/html; utf-8">
+<html>
+	<head>
+		<script type="text/javascript"  src="./js/classes/Empleado.js" charset="UTF-8"></script>
+		<script type="text/javascript"  src="./js/classes/Empleados/Rrhh.js" charset="UTF-8"></script>
+		<script type="text/javascript"  src="./js/classes/Empleados/Desarrollador.js" charset="UTF-8"></script>
+		<script type="text/javascript"  src="./js/classes/Empleados/Ventas.js" charset="UTF-8"></script>
+		<script type="text/javascript"  src="./js/funcionalidad.js" charset="UTF-8"></script>
+
+		<script>
+		var personajes = [];
+		</script>	
+		
+			
+	</head>
+	<body>
+			
+		<h1>Portal del empleado</h1>
+		</br>
+		</br>
+		<h5>Añadir empleado</h5>
+		<form id="empleadoForm">
+			<label for="Empleado">Tipo de empleado:</label>
+
+			<select name="Empleado" id="empleado" onchange="changeFormulario()">
+			  <option value="Rrhh">RRHH</option>
+			  <option value="Desarrollador">Desarrollador</option>
+			  <option value="Ventas">Empleado de Ventas</option>
+			</select>
+			</br>
+			</br>
+			<label>Nombre:</label>
+			<input type="text" id="fname" name="fname"></input>
+			</br>
+			</br>
+			<label>Apellidos:</label>
+			<input type="text" id="flast" name="flast"></input>
+			</br>
+			</br>
+			<label>DNI:</label>
+			<input type="text" id="fdni" name="fdni"></input>
+			</br>
+			</br>
+			<label>Cargo:</label>
+			<input type="text" id="fcargo" name="fcargo"></input>
+			</br>
+			</br>
+			<label>Horas base:</label>
+			<input type="number" id="fhorasB" name="fhorasB" disabled></input>
+			</br>
+			</br>
+			<label>Horas extra:</label>
+			<input type="number" id="fhorasE" name="fhorasE" disabled></input>
+			</br>
+			</br>
+			<label>Ventas:</label>
+			<input type="number" id="fventas" name="fventas" disabled></input>
+			</br>
+			</br>
+			<input type="button" value="Calcular sueldo" onclick="createEmpleado();"></input>
+		</form>
+		</br>
+		</br>
+		<h5>Tabla empleados y sus sueldos</h5>
+		
+		<div>
+			<table id="employees" border=1>
+				<tr>
+					<th>Nombre</th>
+					<th>Cargo</th>
+					<th>Sueldo</th>
+					<th>Config</th>
+				</tr>
+				
+			</table>
+		</div>
+	
+	
+	
+		
+	</body>
+</html>
