@@ -208,7 +208,8 @@ SELECT title, rating_date, rating.editor_id FROM rating
 -- 3
 SELECT title, rating_date, starrating FROM rating
 	JOIN book ON book.book_code = rating.book_code
-    ORDER BY rating_date;
+WHERE rating_date IS NOT NULL
+ORDER BY rating_date;
     
 -- 4
 SELECT title, concat(editor.first_name, " ", editor.last_name) as name,
@@ -216,7 +217,14 @@ SELECT title, concat(editor.first_name, " ", editor.last_name) as name,
 						JOIN rating ON rating.book_code = book.book_code
                         JOIN editor ON rating.editor_id = editor.editor_id
 	WHERE affiliation LIKE "NY%";
-    
+ 
+ -- seleccionar todos los editores y los rating que tegnan de todos los
+-- affiliates que tengan base en NY
+SELECT * FROM editor 
+		LEFT JOIN rating ON rating.editor_id = editor.editor_id
+WHERE editor.affiliation LIKE "NY%";
+ 
+ 
 -- 5
 SELECT AVG(price) FROM book
 				JOIN rating ON rating.book_code = book.book_code
@@ -225,11 +233,11 @@ SELECT AVG(price) FROM book
 
 -- 6
 SELECT title, COUNT(rating.book_code) FROM book
-						JOIN rating on rating.book_code = book.book_code
-		GROUP BY title;
+		JOIN rating ON rating.book_code = book.book_code
+GROUP BY title;
         
 -- 7
-SELECT DISTINCT title FROM book
+SELECT COUNT(DISTINCT title) as total FROM book
 			JOIN rating on rating.book_code = book.book_code
             JOIN editor on editor.editor_id = rating.editor_id
 WHERE affiliation LIKE "NY%";
@@ -237,6 +245,10 @@ WHERE affiliation LIKE "NY%";
 -- 8
 SELECT title, CONCAT(first_name, " ", last_name) as author, starrating FROM book
 	LEFT JOIN rating ON rating.book_code = book.book_code;
+    
+SELECT title, CONCAT(first_name, " ", last_name) as author, AVG(starrating) FROM book
+	LEFT JOIN rating ON rating.book_code = book.book_code
+GROUP BY title;
     
 -- 9
 SELECT title, CONCAT(book.first_name, " ", book.last_name) as author, starrating, 

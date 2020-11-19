@@ -1,6 +1,11 @@
 CREATE DATABASE museum;
 USE museum;
 
+CREATE TABLE museum(
+	museum_id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT ,
+    name VARCHAR (30) NOT NULL
+);
+
 CREATE TABLE painting(
 	painting_id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT ,
     title VARCHAR (30) NOT NULL,
@@ -8,10 +13,7 @@ CREATE TABLE painting(
     CONSTRAINT painting_museum_fk_1 FOREIGN KEY (museum_id) REFERENCES museum(museum_id)
 );
 
-CREATE TABLE museum(
-	museum_id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT ,
-    name VARCHAR (30) NOT NULL
-);
+
 
 INSERT INTO museum (name) VALUES("Museo Guggenheim");
 INSERT INTO museum (name) VALUES("Centre Pompidou");
