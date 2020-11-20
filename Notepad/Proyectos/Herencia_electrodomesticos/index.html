@@ -1,33 +1,25 @@
 <meta http-equiv="content-type" content="text/html; utf-8">
 <html>
 	<head>
-		<script type="text/javascript"  src="./js/classes/Persona.js" charset="UTF-8"></script>
-		<script type="text/javascript"  src="./js/classes/Personas/Profesor.js" charset="UTF-8"></script>
-		<script type="text/javascript"  src="./js/classes/Personas/Estudiante.js" charset="UTF-8"></script>
+		<script type="text/javascript"  src="./js/classes/Electrodomestico.js" charset="UTF-8"></script>
+		<script type="text/javascript"  src="./js/classes/Estamostontos.js" charset="UTF-8"></script>
+		<script type="text/javascript"  src="./js/classes/Electrodomesticos/Lavadora.js" charset="UTF-8"></script>
+		<script type="text/javascript"  src="./js/classes/Electrodomesticos/Television.js" charset="UTF-8"></script>
 		<script>
-		
-		let persona1 = new Persona("Pedro");
 			
-		persona1.caminar();
-		persona1.saludar();
-		//persona1.verAsignatura(); -> NO EXISTE
 		
-		let profe1 = new Profesor("Carlos", "Programacion");
+		let cacharro1 = new Electrodomestico(100);
 		
-		profe1.caminar();
-		profe1.saludar();
+		console.log(cacharro1);
 		
-		profe1.verAsignatura();
+		let lavadora1 = new Lavadora();
 		
+		console.log(lavadora1);
 		
-		let est1 = new Estudiante("Luisito", 8.2, "Matematicas");
-		est1.caminar();
-		est1.saludar();
-		console.log(est1.getNotaMedia());
-		console.log(est1.getAsignaturaFavorita());
+		let tele1 = new Television();
 		
+		console.log(tele1);
 		
-			
 		
 		</script>	
 		
